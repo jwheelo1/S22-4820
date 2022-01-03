@@ -1,4 +1,3 @@
-
 m4_include(setup.m4)
 
 # Syllabus: University of Wyoming Computer Science 4820 Database 
@@ -6,10 +5,10 @@ m4_include(setup.m4)
 ## Spring 2022
 
 - Instructor: Prof. Philip Schlump
-- Office: Office hours will be online using Zoom. M,W,F from 8:00am to 9:00am and by appointment.  The Zoom link to join will be emailed out to the class.
-- Contact via email (pschlump@uwyo.edu) or (for emergencies only): 720-209-7888 (my cell)
-and pschlump@gmail.com (personal email).
-- Class Time:  Lectures are online and pre-recorded. 
+- Office: 4081B in the Engineering Building.   My office is right across the hall from the Computer Science Department Office.
+- Office: Office hours will be  Tu/Th from 9:25am to 10:50am (immediately following this class) and by appointment.  
+- Contact via email (pschlump@uwyo.edu) or (for emergencies only): 720-209-7888 (my cell) and pschlump@gmail.com (personal email).
+- Class Time:  08:10 AM - 09:25 AM Building: Agriculture Bldg Room: 1032 
 
 If you call me to set up an appointment, you will need to send me a SMS message
 first so that I enter your name into my contact list.  I get 10+ robo-calls a day and
@@ -44,6 +43,51 @@ There will be a midterm and a final.   They will be online.
 ### Lectures
 
 m4_comment([[[
+
+
+    January 2022      
+Su Mo Tu We Th Fr Sa  
+                   1  
+ 2  3  4  5  6  7  8  
+ 9 10 11 12 13 14 15  
+16 17 18 19 20 21 22  
+       ^===================== 1st class
+23 24 25 26 27 28 29  
+30 31                 
+
+   February 2022      
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 
+                
+     March 2022       
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30 31        
+                      
+     April 2022       
+Su Mo Tu We Th Fr Sa  
+                1  2  
+ 3  4  5  6  7  8  9  
+10 11 12 13 14 15 16  
+17 18 19 20 21 22 23  
+24 25 26 27 28 29 30  
+                      
+      May 2022        
+Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7  
+ 8  9 10 11 12 13 14  
+    ^^^^^^^^^^^^^================ Finals
+15 16 17 18 19 20 21  
+22 23 24 25 26 27 28  
+29 30 31              
+                      
 ]]])
 
 | Lecture                                                                    | Week | Date    |
@@ -51,7 +95,6 @@ m4_comment([[[
 |  1. Syllabus -- Class Requirements                                         |   1  | Jan 21  |
 |  	- Interactive Homework                                                   |   1  | Jan 21  |
 |  	- Assignments                                                            |      |         |
-|  	- Interactive Discussions (zoom)                                         |      |         |
 |  	- Tests                                                                  |      |         |
 |                                                                            |      |         |  
 |  2. Why Database                                                           |   2  | Jan 25  |
