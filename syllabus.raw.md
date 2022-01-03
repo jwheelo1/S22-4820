@@ -40,7 +40,6 @@ are a single project broken into 2 parts.  You have to complete 3 to do 4.
 
 There will be a midterm and a final.   They will be online.
 
-### Lectures
 
 m4_comment([[[
 
@@ -139,6 +138,115 @@ Su Mo Tu We Th Fr Sa
 |  24. Conclusions / Final Review                                            |  14  | Apr 26  |
 
 
+<div class="pagebreak"> </div>
+
+
+### Lectures
+
+Note - This is the current "Plan" - if this is updated it will
+be announced in class and posted to the Github.com site for the
+class.
+
+| Date        | Lect. No | Description                             |
+|-------------|----------|-----------------------------------------|
+| *Week 1*    |          |                                         |
+| Tue Jan 18  | 1        | Cover Syllabus  - Class Rules           |
+|             |          | Interactive Homework.                   |
+|             |          | Database Setup.                         |
+|             |          |                                         |
+| Thr Jan 20  | 2        | Why Database.  Types of Database.       |
+|             |          | bottle.                                 |
+|             |          |                                         |
+| *Week 2*    |          |                                         |
+| Tue Jan 25  | 3        | Python and Database.  Why Python.       |
+|             |          |                                         |
+| Thr Jan 27  | 4        | Tables / Queries.                       |
+|             |          |                                         |
+| *Week 3*    |          |                                         |
+| Tue Feb 01  | 5        | How applications work today.            |
+|             |          |                                         |
+| Thr Feb 03  | 6        | Future of Database.                     |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 4*    |          |                                         |
+| Tue Feb 08  | 7        | Jobs in Database.                       |
+|             |          |                                         |
+| Tue Feb 10  | 8        | How queries get run.                    |
+|             |          |                                         |
+| *Week 5*    |          |                                         |
+| Tue Feb 15  | 9        | Data model. ERD.                        |
+|             |          |                                         |
+| Thr Feb 17  |          | NO CLASS                                |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 6*    |          |                                         |
+| Tue Feb 22  | 10       | Stored Procedures.                      |
+|             |          |                                         |
+| Thr Feb 24  | 11       | Triggers.                               |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 7*    |          |                                         |
+| Tue Mar 01  | 12       | Joins and Join types.                   |
+|             |          |                                         |
+| Thr Mar 03  | 13       | Midterm Test (a take-home)              |
+|             |          | Query Optimization.                     |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 8*    |          |                                         |
+| Tue Mar 08  | 14       | Document Stores (MongoDB).              |
+|             |          |                                         |
+| Thr Mar 10  | 15       | Shared Data Structures (Redis)          |
+|             |          |                                         |
+| Mar-10      |          | Spring Break - No Class                 |
+|  to Mar-18  |          |                                         |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 9*    | 16       | Using Postgres with Python.             |
+|             |          |                                         |
+|             |          |                                         |
+| Thr Mar 24  | 17       | Setting up a simple server.             |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 10*   | 18       | xyzzy                                   |
+| Tue Mar 29  |          |                                         |
+|             |          |                                         |
+| Thr Mar 31  | 19       | xyzzy                                   |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 11*   | 20       | xyzzy                                   |
+| Tue Apr 05  |          |                                         |
+|             |          |                                         |
+| Thr Apr 07  | 21       | xyzzy                                   |
+|             |          |                                         |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 12*   | 22       | xyzzy                                   |
+| Tue Apr 12  |          |                                         |
+|             |          |                                         |
+| Thr Apr 14  | 23       | xyzzy                                   |
+|             |          |                                         |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 13*   | 24       | xyzzy                                   |
+|             |          |                                         |
+| Thr Apr 21  | 25       | xyzzy                                   |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 14*   | 27       | xyzzy                                   |
+| Tue Apr 26  |          |                                         |
+|             |          |                                         |
+| Thr Apr 28  | 28       | xyzzy                                   |
+|             |          |                                         |
+|             |          |                                         |
+| *Week 15*   | 29       | xyzzy                                   |
+|             |          |                                         |
+| Thr May 05  | 30       | Final Lecture / Review.                 |
+|             |          |                                         |
+
+
+
+
+<div class="pagebreak"> </div>
 
 ### Textbook
 
@@ -169,7 +277,7 @@ Linode and load the database and other tools on that and run them remotely.
 
 | Points      | Percentage  | Grade |
 |-------------|-------------|-------|
-| 2000...1800 | 100% to 90% | A     |
+| 2200...1800 | 100% to 90% | A     |
 | 1800...1600 |  90% to 80% | B     |
 | 1600...1400 |  80% to 70% | C     |
 | 1400...1200 |  70% to 60% | D     |
@@ -177,30 +285,29 @@ Linode and load the database and other tools on that and run them remotely.
 
 ### Assignments.
 
-1000pts total.
+1200pts total.
 
 
 | Assignments    | Pts  | Description                                | Due Date   | Duration |
 |----------------|-----:|--------------------------------------------|------------|---------:|
 | 01 - Install   |   50 | Install PosgreSQL, Redis, Python, pgAdmin  | 2022-02-15 | 2 weeks  |
 | 02 - Insert    |  200 | Parse text / generate data                 | 2022-03-01 | 2 weeks  |
-| 03 - Keyword   |  200 | Key World Search                           | 2022-03-22 | 2 weeks  |
-| 04 - App       |  300 | Issue Tracking Application                 | 2022-03-29 | 3 weeks  |
+| 03 - Keyword   |  250 | Key World Search                           | 2022-03-22 | 2 weeks  |
+| 04 - App       |  500 | Issue Tracking Application                 | 2022-04-05 | 4 weeks  |
 | 05 - Data dump |   50 | Use pgdump to dump data                    | 2022-04-05 | 1 weeks  |
 | 06 - Backup    |   50 | Use tar to backup entire database          | 2022-04-12 | 1 weeks  |
-| 07 - Remote    |   50 | Setup database security                    | 2022-04-26 | 1 weeks  |
-| 08 - Tune SQL  |  100 | Find and Tune SQL                          | 2022-05-07 | 1+ weeks |
+| 07 - Tune SQL  |  100 | Find and Tune SQL                          | 2022-05-07 | 1+ weeks |
 |                |      |                                            |            |          |
-| Total          | 1000 |                                            |            | 11 weeks |
+| Total          | 1200 |                                            |            | 11 weeks |
 
 
 
 
-1000 pts - Assignments
+1200 pts - Assignments
  500 pts - Interactive Homework
  500 pts - 2 tests (midterm, final) Midterm Date: 2022-03-10 Final Date: 2022-05-11
 
-2000 pts - total
+2200 pts - total
 
 50 Interactive (10pts each)
 	10 per week = 4 weeks ( >>
