@@ -40,213 +40,106 @@ are a single project broken into 2 parts.  You have to complete 3 to do 4.
 
 There will be a midterm and a final.   They will be online.
 
-
-m4_comment([[[
-
-
-    January 2022      
-Su Mo Tu We Th Fr Sa  
-                   1  
- 2  3  4  5  6  7  8  
- 9 10 11 12 13 14 15  
-16 17 18 19 20 21 22  
-       ^===================== 1st class
-23 24 25 26 27 28 29  
-30 31                 
-
-   February 2022      
-Su Mo Tu We Th Fr Sa  
-       1  2  3  4  5  
- 6  7  8  9 10 11 12  
-13 14 15 16 17 18 19  
-20 21 22 23 24 25 26  
-27 28 
-                
-     March 2022       
-Su Mo Tu We Th Fr Sa  
-       1  2  3  4  5  
- 6  7  8  9 10 11 12  
-13 14 15 16 17 18 19  
-20 21 22 23 24 25 26  
-27 28 29 30 31        
-                      
-     April 2022       
-Su Mo Tu We Th Fr Sa  
-                1  2  
- 3  4  5  6  7  8  9  
-10 11 12 13 14 15 16  
-17 18 19 20 21 22 23  
-24 25 26 27 28 29 30  
-                      
-      May 2022        
-Su Mo Tu We Th Fr Sa  
- 1  2  3  4  5  6  7  
- 8  9 10 11 12 13 14  
-    ^^^^^^^^^^^^^================ Finals
-15 16 17 18 19 20 21  
-22 23 24 25 26 27 28  
-29 30 31              
-                      
-]]])
-
-| Lecture                                                                    | Week | Date    |
-|----------------------------------------------------------------------------|:----:|:--------|
-|  1. Syllabus -- Class Requirements                                         |   1  | Jan 21  |
-|  	- Interactive Homework                                                   |   1  | Jan 21  |
-|  	- Assignments                                                            |      |         |
-|  	- Tests                                                                  |      |         |
-|                                                                            |      |         |  
-|  2. Why Database                                                           |   2  | Jan 25  |
-|  3. Installing PostgreSQL and other tools (Assignment 1)                   |   2  | Jan 25  | 
-|  	- PostgreSQL                                                             |      |         |
-|  	- Python                                                                 |      |         |
-|  	- bottle                                                                 |      |         |
-|  	- python libraries                                                       |      |         |
-|  	- JavaScript (jQuery)                                                    |      |         |
-|  	- style sheets and fonts (Bootstrap)                                     |      |         |
-|                                                                            |      |         |  
-|  4. How applications work today                                            |   3  | Feb 1   |
-|                                                                            |      |         |  
-|  5. Future of Database                                                     |   4  | Feb 7   |
-|  6. Global Variables Considered Harmful                                    |   4  | Feb 7   |
-|                                                                            |      |         |  
-|  7. Jobs In Database                                                       |   5  | Feb 14  |
-|  8. Design Database with Entity Relationship Models (ERD)                  |   5  | Feb 14  |
-|                                                                            |      |         |  
-|  9. ACID compliance and history of database                                |   6  | Feb 21  |
-|  10. Midterm Review                                                        |   6  | Feb 21  |
-|  11. Security Database/Application                                         |   6  | Feb 21  |
-|                                                                            |      |         |  
-|  12. The Rise of NoSQL - MongoDB (MongoDB v.s. PostgreSQL JSONb data type) |   7  | Mar 1   |
-|                                                                            |      |         |  
-|  13. Legal and Backup Considerations                                       |   8  | Mar 7   |
-|  15. Careful Walk-through of Assignment 04.                                |   8  | Mar 10  |
-|  16. Careful Walk-through of Assignment 04. (get-issue-detail)             |   8  | Mar 10  |
-|                                                                            |      |         |  
-|  14. F1 a world scale database                                             |   9  | Mar 16  |
-|  17. Practical NoSQL - Redis                                               |   9  | Mar 14  |
-|                                                                            |      |         |  
-|  19. Hash Based Databases v.s. SqLite                                      |  10  | Mar 7   |
-|                                                                            |      |         |  
-|  20. Blockchain as a Database                                              |  11  | Apr 21  |
-|                                                                            |      |         |  
-|  21. Performance Tuning SQL (1)                                            |  12  | Apr 19  |
-|  22. Performance Tuning SQL (2)                                            |  12  | Apr 19  |
-|                                                                            |      |         |  
-|  23. PostGIS - Geographic Information System                               |  13  | Mar 28  |
-|                                                                            |      |         |  
-|  24. Conclusions / Final Review                                            |  14  | Apr 26  |
-
-
 <div class="pagebreak"> </div>
-
-
-### Lectures
-
-Note - This is the current "Plan" - if this is updated it will
-be announced in class and posted to the Github.com site for the
-class.
 
 | Date        | Lect. No | Description                             |
 |-------------|----------|-----------------------------------------|
 | *Week 1*    |          |                                         |
 | Tue Jan 18  | 1        | Cover Syllabus  - Class Rules           |
 |             |          | Interactive Homework.                   |
-|             |          | Database Setup.                         |
+|             |          | Full Stack / Using Database.            |
+|             |          | Why Database Science.                   |
 |             |          |                                         |
-| Thr Jan 20  | 2        | Why Database.  Types of Database.       |
-|             |          | bottle.                                 |
+| Thr Jan 20  | 2        | Installing PostgreSQL.                  |
+|             |          | System Admin.                           |
+|             |          | Install Python - Anaconda.              |
+|             |          | Install using 'pip'.                    |
 |             |          |                                         |
 | *Week 2*    |          |                                         |
-| Tue Jan 25  | 3        | Python and Database.  Why Python.       |
+| Tue Jan 25  | 3        | Tables and Types                        |
 |             |          |                                         |
-| Thr Jan 27  | 4        | Tables / Queries.                       |
+| Thr Jan 27  | 4        | Multiple Tables and basic queries       |
 |             |          |                                         |
 | *Week 3*    |          |                                         |
-| Tue Feb 01  | 5        | How applications work today.            |
+| Tue Feb 01  | 5        | Inserting data                          |
 |             |          |                                         |
-| Thr Feb 03  | 6        | Future of Database.                     |
-|             |          |                                         |
+| Thr Feb 03  | 6        | Updating Data                           |
 |             |          |                                         |
 | *Week 4*    |          |                                         |
-| Tue Feb 08  | 7        | Jobs in Database.                       |
+| Tue Feb 08  | 7        | Deleting Data                           |
 |             |          |                                         |
-| Tue Feb 10  | 8        | How queries get run.                    |
+| Tue Feb 10  | 8        | Indexing - finding data faster.         |
 |             |          |                                         |
 | *Week 5*    |          |                                         |
-| Tue Feb 15  | 9        | Data model. ERD.                        |
+| Tue Feb 15  | 9        | Key Word Search.                        |
 |             |          |                                         |
-| Thr Feb 17  |          | NO CLASS                                |
-|             |          |                                         |
+| Thr Feb 17  |          | NO CLASS (There may be a recorded video) |
 |             |          |                                         |
 | *Week 6*    |          |                                         |
-| Tue Feb 22  | 10       | Stored Procedures.                      |
+| Tue Feb 22  | 10       | Alter data models.                      |
 |             |          |                                         |
-| Thr Feb 24  | 11       | Triggers.                               |
-|             |          |                                         |
+| Thr Feb 24  | 11       | Foreign Keys.                           |
 |             |          |                                         |
 | *Week 7*    |          |                                         |
-| Tue Mar 01  | 12       | Joins and Join types.                   |
+| Tue Mar 01  | 12       | Midterm Review.                         |
 |             |          |                                         |
-| Thr Mar 03  | 13       | Midterm Test (a take-home)              |
-|             |          | Query Optimization.                     |
-|             |          |                                         |
+| Thr Mar 03  | 13       | Midterm Test                            |
 |             |          |                                         |
 | *Week 8*    |          |                                         |
-| Tue Mar 08  | 14       | Document Stores (MongoDB).              |
+| Tue Mar 08  | 14       | Python and bottle.                      |
 |             |          |                                         |
-| Thr Mar 10  | 15       | Shared Data Structures (Redis)          |
+| Thr Mar 10  | 15       | How applications work.                  |
 |             |          |                                         |
 | Mar-10      |          | Spring Break - No Class                 |
 |  to Mar-18  |          |                                         |
 |             |          |                                         |
+| *Week 9*    | 16       | Basic database application.             |
+|             |          | Most applications are use database.     |
 |             |          |                                         |
-| *Week 9*    | 16       | Using Postgres with Python.             |
+| Thr Mar 24  | 17       | Jobs in Database                        |
 |             |          |                                         |
+| *Week 10*   | 18       |                                         |
+| Tue Mar 29  |          | Design Database with Entity Relationship Models (ERD) |
 |             |          |                                         |
-| Thr Mar 24  | 17       | Setting up a simple server.             |
+| Thr Mar 31  | 19       | Future of Database (F1, etc)            |
 |             |          |                                         |
+| *Week 11*   | 20       |                                         |
+| Tue Apr 05  |          | ACID Compliance and MongoDB             |
+|             |          | (FerritDB, Pg and JSONb data)           |
 |             |          |                                         |
-| *Week 10*   | 18       | xyzzy                                   |
-| Tue Mar 29  |          |                                         |
+| Thr Apr 07  | 21       | Security / Database                     |
 |             |          |                                         |
-| Thr Mar 31  | 19       | xyzzy                                   |
+| *Week 12*   | 22       |                                         |
+| Tue Apr 12  |          | NO-SQL Redis                            |
 |             |          |                                         |
+| Thr Apr 14  | 23       | Database Scale                          |
 |             |          |                                         |
-| *Week 11*   | 20       | xyzzy                                   |
-| Tue Apr 05  |          |                                         |
+| *Week 13*   | 24       |                                         |
+| Tue Apr 19  |          | Legal and Backup                        |
 |             |          |                                         |
-| Thr Apr 07  | 21       | xyzzy                                   |
+| Thr Apr 21  | 25       | Hash Based Database                     |
 |             |          |                                         |
-|             |          |                                         |
-|             |          |                                         |
-| *Week 12*   | 22       | xyzzy                                   |
-| Tue Apr 12  |          |                                         |
-|             |          |                                         |
-| Thr Apr 14  | 23       | xyzzy                                   |
-|             |          |                                         |
-|             |          |                                         |
-|             |          |                                         |
-| *Week 13*   | 24       | xyzzy                                   |
-|             |          |                                         |
-| Thr Apr 21  | 25       | xyzzy                                   |
-|             |          |                                         |
-|             |          |                                         |
-| *Week 14*   | 27       | xyzzy                                   |
+| *Week 14*   | 27       | Blockchain is not a Database.           |
 | Tue Apr 26  |          |                                         |
 |             |          |                                         |
-| Thr Apr 28  | 28       | xyzzy                                   |
+| Thr Apr 28  | 28       | Performance Tuning SQL                  |
 |             |          |                                         |
+| *Week 15*   | 29       |                                         |
+| Tue May 03  |          | More on Performance.                    | 
 |             |          |                                         |
-| *Week 15*   | 29       | xyzzy                                   |
+| Thr May 05  | 30       | Final Review.                           |
 |             |          |                                         |
-| Thr May 05  | 30       | Final Lecture / Review.                 |
-|             |          |                                         |
-
-
 
 
 <div class="pagebreak"> </div>
+
+Some fill in topics that will be covered when a lecture is too short.
+
+1. Global Variables Considered Harmful  
+2. History of Database
+3. Trends in Database
+3. PostGIS
+
 
 ### Textbook
 
@@ -456,20 +349,3 @@ during the semester. Class could be canceled or assignments due dates changed.
 
 Copyright (C) University of Wyoming, 2022.
 
-
-
-<div class="pagebreak"> </div>
-
-m4_comment([[[
-
-https://stackoverflow.blog/2022/01/14/have-the-tables-turned-on-nosql/
-
-	Indexed document stores like MongoDB
-	Graph databases like Neo4j
-	Column stores like Cassandra
-	Time-series databases, which index data by time stamps, like InfluxDB. 
-	Hybrid forms that use multiple of the previous paradigms
-
-https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
-
-]]])
