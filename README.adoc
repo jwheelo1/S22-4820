@@ -1,0 +1,4 @@
+= 4820 Database, University of Wyoming
+
+Look for data in ./class/lect/Lect-02 and the sub-directories.
+
