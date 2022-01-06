@@ -1,0 +1,1 @@
+\COPY per_county_gdp ( GeoFIPS, county_name, state_code, Region, TableName, LineCode, junk1, Description, Unit, yr_2001, yr_2002, yr_2003, yr_2004, yr_2005, yr_2006, yr_2007, yr_2008, yr_2009, yr_2010, yr_2011, yr_2012, yr_2013, yr_2014, yr_2015, yr_2016, yr_2017, yr_2018, yr_2019, yr_2020) FROM 'all-data2.csv' DELIMITER ',' NULL AS '(NA)' CSV;
