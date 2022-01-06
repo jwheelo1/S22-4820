@@ -1,3 +1,10 @@
 = Lecture 02
 
 Most of our initial data for the class exampels is in this directory.
+
+GDP per county in US : CAGGP9
+
+per county voting data, 2020 presidental election: county
+
+NYTimes Sars-COV-2 data (COVID-19) : covid-19-data
+
