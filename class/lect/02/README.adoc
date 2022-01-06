@@ -1,0 +1,3 @@
+= Lecture 02
+
+Most of our initial data for the class exampels is in this directory.
