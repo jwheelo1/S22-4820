@@ -10,3 +10,10 @@ Why is a Database Important
 
 How common are database
 
+What kind of jobs can you get
+
+What is useful about database
+
+Database Trends
+
+

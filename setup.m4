@@ -17,6 +17,9 @@ m4_echo([[[
 .markdown-body td {
 	font-size: 12px;
 }
+table {
+	border: 1px solid black;
+}
 </style>
 ]]])m4_dnl
 m4_dnl
