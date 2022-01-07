@@ -3,7 +3,22 @@ PP=`pwd`
 FN=Lect-02
 DIR=../../../
 IMG=
-PY= 
+PY=  \
+	CAGGP9/gdp.sql \
+	CAGGP9/gdp_post.sql \
+	CAGGP9/load_gdp.sql \
+	CAGGP9/rpt_wy.sql \
+	county/load_vote_by_county.sql \
+	county/vote_by_county.sql \
+	county/vote_by_county_post.sql \
+	county/w0.sql \
+	county/what-counties-voted-for-joe.sql \
+	county/who-wran-in-2020.sql \
+	covid-19-data/load-us-recent.sql \
+	covid-19-data/us-counties-recent-post.sql \
+	covid-19-data/us-counties-recent.sql \
+	growth_by_candidate.sql \
+	us_states.sql
 
 
 all: setup all2
