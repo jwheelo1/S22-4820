@@ -21,3 +21,25 @@ pip install --upgrade setuptools
 pip install --upgrade csvkit
 
 
+select 
+		t2.winner,
+		avg(t1.growth_amt) as average_growth,
+		sum(t1.growth_amt) as sum_growth,
+		round(avg(t1.growth_pct)::numeric,2) as average_growth_pct
+	from per_county_gdp_growth as t1
+		join election_2020 as t2 on ( t1.state = t2.state and t1.county_name = t2.county_name )
+	group by t2.winner
+;
+
+--- create table per_county_gdp_growth (
+--- 	id					serial primary key,
+--- 	all_data_id			int,
+--- 	county_name			text,
+--- 	state_code			text,
+--- 	from_gdp			int,
+--- 	to_gdp				int,
+--- 	growth_amt			int,
+--- 	growth_pct			float,		-- pct implies multiped by 100.0
+--- 	from_year			int default 2010,
+--- 	to_year				int default 2020
+--- );
