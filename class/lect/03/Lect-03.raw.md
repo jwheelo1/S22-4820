@@ -275,6 +275,145 @@ There are lots!
       </tbody>
   <table>
 
+
+and string operations
+
+
+<table border="1" class="CALSTABLE">
+      <colgroup><col>
+      <col>
+      <col>
+      <col>
+      <col>
+      </colgroup><thead>
+        <tr>
+          <th>Function</th>
+          <th>Return Type</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><tt class="LITERAL"><tt class="PARAMETER">string</tt>
+          <tt class="LITERAL">||</tt> <tt class="PARAMETER">string</tt></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>String concatenation</td>
+          <td><tt class="LITERAL">'Post' || 'greSQL'</tt></td>
+          <td><tt class="LITERAL">PostgreSQL</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><tt class="PARAMETER">string</tt>
+          <tt class="LITERAL">||</tt> <tt class="PARAMETER">non-string</tt></tt> or <tt class="LITERAL"><tt class="PARAMETER">non-string</tt>
+          <tt class="LITERAL">||</tt> <tt class="PARAMETER">string</tt></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>String concatenation with one non-string input</td>
+          <td><tt class="LITERAL">'Value: ' || 42</tt></td>
+          <td><tt class="LITERAL">Value: 42</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">bit_length(<tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">int</tt></td>
+          <td>Number of bits in string</td>
+          <td><tt class="LITERAL">bit_length('jose')</tt></td>
+          <td><tt class="LITERAL">32</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">char_length(<tt class="PARAMETER">string</tt>)</code></tt> or <tt class="LITERAL"><code class="FUNCTION">character_length(<tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">int</tt></td>
+          <td>Number of characters in string</td>
+          <td><tt class="LITERAL">char_length('jose')</tt></td>
+          <td><tt class="LITERAL">4</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">lower(<tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Convert string to lower case</td>
+          <td><tt class="LITERAL">lower('TOM')</tt></td>
+          <td><tt class="LITERAL">tom</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">octet_length(<tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">int</tt></td>
+          <td>Number of bytes in string</td>
+          <td><tt class="LITERAL">octet_length('jose')</tt></td>
+          <td><tt class="LITERAL">4</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">overlay(<tt class="PARAMETER">string</tt>
+          placing <tt class="PARAMETER">string</tt> from <tt class="TYPE">int</tt> [<span class="OPTIONAL">for <tt class="TYPE">int</tt></span>])</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Replace substring</td>
+          <td><tt class="LITERAL">overlay('Txxxxas' placing 'hom'
+          from 2 for 4)</tt></td>
+          <td><tt class="LITERAL">Thomas</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">position(<tt class="PARAMETER">substring</tt>
+          in <tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">int</tt></td>
+          <td>Location of specified substring</td>
+          <td><tt class="LITERAL">position('om' in
+          'Thomas')</tt></td>
+          <td><tt class="LITERAL">3</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">substring(<tt class="PARAMETER">string</tt>
+          [<span class="OPTIONAL">from <tt class="TYPE">int</tt></span>] [<span class="OPTIONAL">for
+          <tt class="TYPE">int</tt></span>])</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Extract substring</td>
+          <td><tt class="LITERAL">substring('Thomas' from 2 for
+          3)</tt></td>
+          <td><tt class="LITERAL">hom</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">substring(<tt class="PARAMETER">string</tt>
+          from <tt class="REPLACEABLE c3">pattern</tt>)</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Extract substring matching POSIX regular expression.
+          See <a href="functions-matching.html">Section 9.7</a> for
+          more information on pattern matching.</td>
+          <td><tt class="LITERAL">substring('Thomas' from
+          '...$')</tt></td>
+          <td><tt class="LITERAL">mas</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">substring(<tt class="PARAMETER">string</tt>
+          from <tt class="REPLACEABLE c3">pattern</tt> for
+          <tt class="REPLACEABLE c3">escape</tt>)</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Extract substring matching <acronym class="ACRONYM">SQL</acronym> regular expression. See <a href="functions-matching.html">Section 9.7</a> for more
+          information on pattern matching.</td>
+          <td><tt class="LITERAL">substring('Thomas' from
+          '%#"o_a#"_' for '#')</tt></td>
+          <td><tt class="LITERAL">oma</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">trim([<span class="OPTIONAL">leading |
+          trailing | both</span>] [<span class="OPTIONAL"><tt class="PARAMETER">characters</tt></span>]
+          from <tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Remove the longest string containing only the
+          <tt class="PARAMETER">characters</tt> (a space by
+          default) from the start/end/both ends of the <tt class="PARAMETER">string</tt></td>
+          <td><tt class="LITERAL">trim(both 'x' from
+          'xTomxx')</tt></td>
+          <td><tt class="LITERAL">Tom</tt></td>
+        </tr>
+        <tr>
+          <td><tt class="LITERAL"><code class="FUNCTION">upper(<tt class="PARAMETER">string</tt>)</code></tt></td>
+          <td><tt class="TYPE">text</tt></td>
+          <td>Convert string to upper case</td>
+          <td><tt class="LITERAL">upper('tom')</tt></td>
+          <td><tt class="LITERAL">TOM</tt></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
 ### Base Functions
 
 
@@ -500,8 +639,13 @@ and a factorial operator!
 ```
 select 5!;
 ```
+and
 
-That is *FUN* !
+```
+select !! 5;
+```
+
+That is *FUN* !  Not 1 but 2 factorial operators.
 
 
 
