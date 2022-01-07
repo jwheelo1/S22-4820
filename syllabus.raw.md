@@ -28,13 +28,6 @@ video, text and an interactive box for doing the work.  The first 2 videos
 are critical as they show how to use the tool and how to get your grade
 for these assignments.
 
-There are 5 Interactive discussions.  These are required.  They will be
-on zoom.  Choose a time of day to attend.  They will be held at 3 different
-times a day - so you only need to attend one of the 3 on that a day.
-Each of the synchronous zoom discussions will be at 9:00am, 3:00pm and
-6:00pm on a Monday.  If you are unable to make one of the times let me
-know and I will find a time.  These will be about 45 minutes long.
-
 There will be  8 assignments.  The number of points varies.  Assignment 3 and 4
 are a single project broken into 2 parts.  You have to complete 3 to do 4.
 
