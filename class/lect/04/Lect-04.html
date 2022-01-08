@@ -874,20 +874,7 @@ select distinct t1.candidate
 <p>And now let&rsquo;s apply this for all of a single candidate.
 This will give us all the counties that the candidate won.</p>
 
-<pre><code>-- Find the set of counties that voted for &quot;Sleepy Joe&quot; in 2020
-
-select t1.state, t1.county_name
-from vote_by_county as t1
-where t1.year = 2020
-	and t1.candidate = 'Joseph R Biden Jr'
-	and t1.candidatevotes = (
-		select max(t2.candidatevotes) as max_votes
-		from vote_by_county as t2
-		where t2.state = t1.state
-		  and t2.county_name = t1.county_name
-	)
-	order by state, county_name
-	;
+<pre><code>
 </code></pre>
 
 <p>And the other guy</p>
@@ -904,6 +891,7 @@ where t1.year = 2020
 	)
 	order by state, county_name
 	;
+
 </code></pre>
 
 </div>
