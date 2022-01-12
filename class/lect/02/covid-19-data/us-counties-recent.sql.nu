@@ -12,9 +12,9 @@
  12: -- 2021-12-06,Chambers,Alabama,01017,5810,142
  13: 
  14: 
- 15: drop table if exists us_countines_sars_cov_2 ;
+ 15: drop table if exists us_counties_sars_cov_2 ;
  16: 
- 17: create table us_countines_sars_cov_2 (
+ 17: create table us_counties_sars_cov_2 (
  18:     id                    serial primary key,
  19:     observation_date     date,
  20:     county                 text, 

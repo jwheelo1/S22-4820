@@ -74,6 +74,11 @@ m4_include(gb2.sql.nu)
 Let's group by the state and find out the set of states that each
 candidate won.
 
+This works with "having" as a where like clause.
+
+Also this has sub-queries.
+
 ```
 m4_include(gb3.sql.nu)
 ```
+

@@ -163,11 +163,11 @@ Linode and load the database and other tools on that and run them remotely.
 
 | Points      | Percentage  | Grade |
 |-------------|-------------|-------|
-| 2200...1800 | 100% to 90% | A     |
-| 1800...1600 |  90% to 80% | B     |
-| 1600...1400 |  80% to 70% | C     |
-| 1400...1200 |  70% to 60% | D     |
-| 1200...0    |   below 60% | F     |
+| 2300...2070 | 100% to 90% | A     |
+| 2069...1840 |  90% to 80% | B     |
+| 1839...1610 |  80% to 70% | C     |
+| 1609...1380 |  70% to 60% | D     |
+| 1379...0    |   below 60% | F     |
 
 ### Assignments.
 
@@ -176,24 +176,24 @@ Linode and load the database and other tools on that and run them remotely.
 
 | Assignments    | Pts  | Description                                | Due Date   | Duration |
 |----------------|-----:|--------------------------------------------|------------|---------:|
-| 01 - Install   |   50 | Install PosgreSQL, Redis, Python, pgAdmin  | 2022-02-07 | 2 weeks  |
+| 01 - Install   |  200 | Install PosgreSQL, Redis, Python, pgAdmin  | 2022-02-07 | 2 weeks  |
 | 02 - Insert    |  200 | Parse text / generate data                 | 2022-02-28 | 2 weeks  |
-| 03 - Keyword   |  250 | Key World Search                           | 2022-03-14 | 2 weeks  |
+| 03 - Keyword   |  200 | Key World Search                           | 2022-03-14 | 2 weeks  |
 | 04 - App       |  500 | Issue Tracking Application                 | 2022-04-11 | 4 weeks  |
 | 05 - Data dump |   50 | Use pgdump to dump data                    | 2022-04-21 | 1 weeks  |
 | 06 - Backup    |   50 | Use tar to backup entire database          | 2022-04-28 | 1 weeks  |
 | 07 - Tune SQL  |  100 | Find and Tune SQL                          | 2022-05-07 | 1 weeks |
 |                |      |                                            |            |          |
-| Total          | 1200 |                                            |            | 11 weeks |
+| Total          | 1300 |                                            |            | 11 weeks |
 
 
 
 
-1200 pts - Assignments
+1300 pts - Assignments
  500 pts - Interactive Homework
  500 pts - 2 tests (midterm, final) Midterm Date: 2022-03-10 Final Date: 2022-05-11
 
-2200 pts - total
+2300 pts - total
 
 50 Interactive (10pts each)
 	10 per week = 4 weeks ( >>

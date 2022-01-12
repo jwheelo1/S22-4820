@@ -802,6 +802,10 @@ over sets of data.</p>
 <p>Let&rsquo;s group by the state and find out the set of states that each
 candidate won.</p>
 
+<p>This works with &ldquo;having&rdquo; as a where like clause.</p>
+
+<p>Also this has sub-queries.</p>
+
 <pre><code>  1: select state, candidate,  
   2:         min(year) as year,
   3:         sum(candidatevotes) as votes_for_candiate,

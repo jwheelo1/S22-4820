@@ -9,4 +9,4 @@
   9:           and t2.county_name = t1.county_name
  10:     )
  11:     order by state, county_name
- 12:     ;
+ 12: ;

@@ -830,8 +830,7 @@ candidate_uc, party, candidatevotes, totalvotes, version, vote_mode ) FROM
 <p>Note that <code>\COPY</code> is not the same as <code>COPY</code> - and <code>\COPY</code> really has to be on
 a single line.</p>
 
-<p>one of the functions that we can use in the projected columns is <code>count(1)</code> or
-<code>count(*)</code>.  They have different performance characteristics.</p>
+<p>one of the functions that we can use in the projected columns is <code>count(1)</code> or <code>count(*)</code>.  They have different performance characteristics.</p>
 
 <pre><code>select count(1) as &quot;number of rows&quot; from vote_by_county ;
 </code></pre>
@@ -877,7 +876,7 @@ This will give us all the counties that the candidate won.</p>
 <pre><code>
 </code></pre>
 
-<p>And the other guy</p>
+<p>And the former president</p>
 
 <pre><code>select t1.state, t1.county_name
 from vote_by_county as t1
@@ -890,7 +889,7 @@ where t1.year = 2020
 		  and t2.county_name = t1.county_name
 	)
 	order by state, county_name
-	;
+;
 
 </code></pre>
 

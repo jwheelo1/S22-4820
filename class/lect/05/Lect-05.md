@@ -103,6 +103,10 @@ over sets of data.
 Let's group by the state and find out the set of states that each
 candidate won.
 
+This works with "having" as a where like clause.
+
+Also this has sub-queries.
+
 ```
   1: select state, candidate,  
   2:         min(year) as year,
@@ -125,3 +129,4 @@ candidate won.
  19: ;
 
 ```
+

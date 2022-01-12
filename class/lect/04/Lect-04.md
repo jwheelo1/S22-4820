@@ -136,9 +136,7 @@ candidate_uc, party, candidatevotes, totalvotes, version, vote_mode ) FROM
 Note that `\COPY` is not the same as `COPY` - and `\COPY` really has to be on
 a single line.
 
-one of the functions that we can use in the projected columns is `count(1)` or 
-`count(*)`.  They have different performance characteristics.
-
+one of the functions that we can use in the projected columns is `count(1)` or `count(*)`.  They have different performance characteristics.
 ```
 select count(1) as "number of rows" from vote_by_county ;
 ```
@@ -189,7 +187,7 @@ This will give us all the counties that the candidate won.
 
 ```
 
-And the other guy
+And the former president
 
 ```
 select t1.state, t1.county_name
@@ -203,7 +201,7 @@ where t1.year = 2020
 		  and t2.county_name = t1.county_name
 	)
 	order by state, county_name
-	;
+;
 
 ```
 

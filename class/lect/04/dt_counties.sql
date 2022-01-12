@@ -9,4 +9,4 @@ where t1.year = 2020
 		  and t2.county_name = t1.county_name
 	)
 	order by state, county_name
-	;
+;

@@ -19,6 +19,7 @@ table {
 
 
 # Lecture 2 - Tables / Insert / Select
+## Feb 20, 2020
 
 SQL databases are composed of a set of tables.
 
