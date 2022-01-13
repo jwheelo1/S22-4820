@@ -13,7 +13,11 @@ From Amazon S3 - for download (same as youtube videos)
 
 ### Linux
 
-I am using Ubuntu 20.04 for this.  We are starting out with Linux because most
+I am using Ubuntu 20.04 for this.  
+
+![ubuntu-download.page.png](ubuntu-download.page.png)
+
+We are starting out with Linux because most
 installs of PostgreSQL are on Linux.   Because of the "working model" memory 
 management in Windows a relational database server runs better on a non-Windows
 system.  Usually this is Linux.   FreeBSD/OpenBSD also work (but use a different

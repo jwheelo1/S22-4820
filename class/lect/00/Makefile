@@ -3,8 +3,7 @@ PP=`pwd`
 FN=Lect-00
 DIR=../../../
 IMG=
-PY=  
-
+PY= ubuntu-download.page.png
 
 all: setup all2
 
