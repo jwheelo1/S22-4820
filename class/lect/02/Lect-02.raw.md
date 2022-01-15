@@ -25,36 +25,27 @@ the file
 
 
 ```
-create table vote_by_county (
-	id				serial primary key,
-	year			int default 2021,
-	state			text default '--',		-- irritatingly all upper case.
-	state_uc		text default '--',
-	state_po		varchar(2) default '--', 	-- Incorrectly Named Column!
-	county_name		text default '--',		-- irritatingly all upper case.
-	county_name_uc	text default '--',
-	county_fips		int default 0,
-	office			text default 'unk', 
-	candidate		text default 'unk', 
-	candidate_uc	text default 'unk', 
-	party			text default 'unk', 
-	candidatevotes	int default 0, 
-	totalvotes		int default 0,
-	version			int,
-	vote_mode		text
-);
+m4_include(create-tables.sql.nu)
+```
+
+#### Output
+
+```
+m4_include(create-tables.out)
 ```
 
 Let's just insert a few rows to see how insert works:
 
 ```
-insert into vote_by_county  ( year, state, county_name, version ) values
-	( 2022, 'Wyoming', 'Albeny',   1 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-	( 2022, 'Wyoming', 'Big Horn', 2 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-	( 2022, 'Wyoming', 'Carbon',   8 );
+m4_include(insert3.sql.nu)
 ```
+
+#### Output
+
+```
+m4_include(insert3.out)
+```
+
 
 Now we can get the data back:
 

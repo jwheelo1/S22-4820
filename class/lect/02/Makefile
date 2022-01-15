@@ -18,6 +18,14 @@ PY=  \
 	covid-19-data/us-counties-recent-post.sql \
 	covid-19-data/us-counties-recent.sql \
 	growth_by_candidate.sql \
+	chk-state-code.sql \
+	create-tables.sql \
+	death_by_sars_cov_2.sql \
+	growth_by_candidate.sql \
+	insert3.sql \
+	slow-query.sql \
+	sum-cases-pct.sql \
+	sum-cases.sql \
 	us_states.sql
 
 
