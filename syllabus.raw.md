@@ -169,6 +169,8 @@ Linode and load the database and other tools on that and run them remotely.
 | 1609...1380 |  70% to 60% | D     |
 | 1379...0    |   below 60% | F     |
 
+<div class="pagebreak"> </div>
+
 ### Assignments.
 
 1200pts total.
@@ -176,8 +178,8 @@ Linode and load the database and other tools on that and run them remotely.
 
 | Assignments    | Pts  | Description                                | Due Date   | Duration |
 |----------------|-----:|--------------------------------------------|------------|---------:|
-| 01 - Install   |  100 | Install PostgreSQL, Redis, Python          | 2022-01-31 | 2 weeks  |
-| 02 - Select    |  200 | Load some data and run some selects        | 2022-02-13 | 2 weeks  |
+| 01 - Install   |  100 | Install PostgreSQL, Redis, Python          | 2022-01-25 | 2 weeks  |
+| 02 - Select    |  200 | Load some data and run some selects        | 2022-02-10 | 2 weeks  |
 | 03 - Insert    |  200 | Parse text / generate data                 | 2022-02-28 | 2 weeks  |
 | 04 - Keyword   |  200 | Key World Search                           | 2022-03-14 | 2 weeks  |
 | 05 - App       |  400 | Issue Tracking Application                 | 2022-04-11 | 4 weeks  |
