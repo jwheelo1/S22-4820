@@ -21,11 +21,19 @@ table {
 
 # Lecture 00 - Installing PostgreSQL
 
-[Install PosgreSQL using Viratual System - https://youtu.be/A0-GrSAubEc](https://youtu.be/A0-GrSAubEc)<br>
 
-From Amazon S3 - for download (same as youtube videos)
 
-[Install PosgreSQL using Viratual System](http://uw-s20-2015.s3.amazonaws.com/4820-L02-install.mp4)<br>
+[Install VirtualBox and Ubuntu](https://youtu.be/TtQJng4iZ7c)<br>
+
+
+[Setup SSH to login to system](https://youtu.be/Hi1TQKdFRjM)<br>
+
+
+[VirtualBox Drivers, screen size, etc](https://youtu.be/lYgr1UFRzAw)<br>
+
+
+[Install of Database, PostgreSQL](https://youtu.be/TI9hoirwHYA)<br>
+
 
 ## Install PostgreSQL 
 
@@ -57,6 +65,10 @@ free micro system on AWS if you qualify for one or on a $15-20 AWS EC3 small sys
 
 If you choose a virtual or remote system my recommendation would be to install Ubuntu on 
 it.
+
+### Step 0
+
+Setup and install Virtual Box, then Install Ubuntu on it.
 
 ### Step 1
 
@@ -103,6 +115,7 @@ Now you can access the database using `psql`
 
 ```
 $ psql
+newuser=> 
 ```
 
 You can now use the database.  Note that you are in a special privilaed account in the database
@@ -111,7 +124,7 @@ and you can break things from this account.
 To exit out of the PostgreSQL prompt, type:
 
 ```
-\q
+newuser=> \q
 ```
 
  
@@ -172,16 +185,25 @@ Will create a database.
 Usually by this point I want to create a database without access to the `postgres`
 Linux login.  This means that I do it via `psql`.
 
+(Replace newuser with your Linux login name.  Replace mypass appropriately)
+
 ```
-$ psql
-pschlump=# create database newuser;
-pschlump=# create user newuser with encrypted password 'mypass';
-pschlump=# grant all privileges on database newuser to newuser;
+postgres $ psql
+postgres=# create database newuser;
+postgres=# create user newuser with encrypted password 'mypass';
+postgres=# grant all privileges on database newuser to newuser;
+postgres=# \q
 ```
 
 This creates a new database user and associates it with a new 
 database.
 
+You should be able to connect to this account from your user now.
+
+```
+newuser $ psql
+
+```
 
 If you want `psql` to connect to a different user from your 
 account:
@@ -192,7 +214,7 @@ newuser=# \conninfo
 newuser=# \q
 ```
 
-Thie output should look like:
+The output should look like:
  
 ```
 You are connected to database "newuser" as user "newuser" via socket in "/var/run/postgresql" at port "5432".
