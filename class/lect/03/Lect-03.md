@@ -36,35 +36,40 @@ Ordr By [ Columns ]
 Let's use our table from last time
 
 ```
-create table vote_by_county (
-    id             serial primary key,
-    year           int default 2021,
-    state          text default '--',        -- irritatingly all upper case.
-    state_uc       text default '--',
-    state_po       varchar(2) default '--',     -- Incorrectly Named Column!
-    county_name    text default '--',        -- irritatingly all upper case.
-    county_name_uc text default '--',
-    county_fips    int default 0,
-    office         text default 'unk', 
-    candidate      text default 'unk', 
-    candidate_uc   text default 'unk', 
-    party          text default 'unk', 
-    candidatevotes int default 0, 
-    totalvotes     int default 0,
-    version        int,
-    vote_mode      text
-);
+  1: -- \c l02
+  2: create table vote_by_county (
+  3:     id                serial primary key,
+  4:     year            int default 2021,
+  5:     state            text default '--',        -- irritatingly all upper case.
+  6:     state_uc        text default '--',
+  7:     state_po        varchar(2) default '--',     -- Incorrectly Named Column!
+  8:     county_name        text default '--',        -- irritatingly all upper case.
+  9:     county_name_uc    text default '--',
+ 10:     county_fips        int default 0,
+ 11:     office            text default 'unk', 
+ 12:     candidate        text default 'unk', 
+ 13:     candidate_uc    text default 'unk', 
+ 14:     party            text default 'unk', 
+ 15:     candidatevotes    int default 0, 
+ 16:     totalvotes        int default 0,
+ 17:     version            int,
+ 18:     vote_mode        text
+ 19: );
+
 ```
 
 Let's just insert a few rows to see how insert works:
 
 ```
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Albeny',   1 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Big Horn', 2 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Carbon',   8 );
+  1: -- \c l02
+  2: 
+  3: insert into vote_by_county  ( year, state, county_name, version ) values
+  4:     ( 2022, 'Wyoming', 'Albeny',   1 );
+  5: insert into vote_by_county  ( year, state, county_name, version ) values
+  6:     ( 2022, 'Wyoming', 'Big Horn', 2 );
+  7: insert into vote_by_county  ( year, state, county_name, version ) values
+  8:     ( 2022, 'Wyoming', 'Carbon',   8 );
+
 ```
 
 
@@ -88,49 +93,309 @@ select id, year as "Year of Our Lord"
 we can pick different columns
 
 
+File: 01.sql
+
 ```
-select id, year, state, county
+
+select id, year, state, county_name as "county"
     from vote_by_county 
 ;
+
+
+```
+
+Output:
+
+```
+  id   | year |        state         |        county         
+-------+------+----------------------+-----------------------
+    16 | 2000 | Alabama              | Bibb
+  1992 | 2000 | Georgia              | Troup
+  4932 | 2000 | Michigan             | Ingham
+  5704 | 2000 | Mississippi          | Perry
+ 12884 | 2004 | Arkansas             | Pope
+ ...
+ 72592 | 2020 | Wyoming              | Sheridan
+ 72593 | 2020 | Wyoming              | Sheridan
+ 72594 | 2020 | Wyoming              | Sublette
+ 72595 | 2020 | Wyoming              | Sublette
+ 72596 | 2020 | Wyoming              | Sublette
+ 72597 | 2020 | Wyoming              | Sublette
+ 72598 | 2020 | Wyoming              | Sweetwater
+ 72599 | 2020 | Wyoming              | Sweetwater
+ 72600 | 2020 | Wyoming              | Sweetwater
+ 72601 | 2020 | Wyoming              | Sweetwater
+ 72602 | 2020 | Wyoming              | Teton
+ 72603 | 2020 | Wyoming              | Teton
+ 72604 | 2020 | Wyoming              | Teton
+ 72605 | 2020 | Wyoming              | Teton
+ 72606 | 2020 | Wyoming              | Uinta
+ 72607 | 2020 | Wyoming              | Uinta
+ 72608 | 2020 | Wyoming              | Uinta
+ 72609 | 2020 | Wyoming              | Uinta
+ 72610 | 2020 | Wyoming              | Washakie
+ 72611 | 2020 | Wyoming              | Washakie
+ 72612 | 2020 | Wyoming              | Washakie
+ 72613 | 2020 | Wyoming              | Washakie
+ 72614 | 2020 | Wyoming              | Weston
+ 72615 | 2020 | Wyoming              | Weston
+ 72616 | 2020 | Wyoming              | Weston
+ 72617 | 2020 | Wyoming              | Weston
+(72617 rows)
+
+
 ```
 
 How about sorting the data
 
+File: 02.sql
+
 ```
-select id, year, state, county
+select id, year, state, county_name
     from vote_by_county 
-    order by county, state
+    order by county_name, state
 ;
+
+
+```
+
+Output:
+
+```
+  id   | year |        state         |      county_name      
+-------+------+----------------------+-----------------------
+ 28679 | 2008 | South Carolina       | Abbeville
+ 38030 | 2012 | South Carolina       | Abbeville
+ 38029 | 2012 | South Carolina       | Abbeville
+ 38028 | 2012 | South Carolina       | Abbeville
+ 28677 | 2008 | South Carolina       | Abbeville
+  9148 | 2000 | South Carolina       | Abbeville
+  9147 | 2000 | South Carolina       | Abbeville
+  9146 | 2000 | South Carolina       | Abbeville
+  9145 | 2000 | South Carolina       | Abbeville
+ 19328 | 2004 | South Carolina       | Abbeville
+ 19326 | 2004 | South Carolina       | Abbeville
+ 19327 | 2004 | South Carolina       | Abbeville
+ 28678 | 2008 | South Carolina       | Abbeville
+ ...
+ 66634 | 2020 | Texas                | Zavala
+ 66635 | 2020 | Texas                | Zavala
+ 48759 | 2016 | Texas                | Zavala
+ 66633 | 2020 | Texas                | Zavala
+ 47714 | 2016 | South Dakota         | Ziebach
+ 69518 | 2020 | South Dakota         | Ziebach
+ 47713 | 2016 | South Dakota         | Ziebach
+ 47712 | 2016 | South Dakota         | Ziebach
+ 69516 | 2020 | South Dakota         | Ziebach
+ 69517 | 2020 | South Dakota         | Ziebach
+ 38362 | 2012 | South Dakota         | Ziebach
+ 38363 | 2012 | South Dakota         | Ziebach
+ 29012 | 2008 | South Dakota         | Ziebach
+  9589 | 2000 | South Dakota         | Ziebach
+ 29011 | 2008 | South Dakota         | Ziebach
+ 29010 | 2008 | South Dakota         | Ziebach
+ 19661 | 2004 | South Dakota         | Ziebach
+ 19660 | 2004 | South Dakota         | Ziebach
+  9590 | 2000 | South Dakota         | Ziebach
+ 19659 | 2004 | South Dakota         | Ziebach
+  9591 | 2000 | South Dakota         | Ziebach
+ 38361 | 2012 | South Dakota         | Ziebach
+  9592 | 2000 | South Dakota         | Ziebach
+(72617 rows)
+
+
 ```
 
 you can only sort by the columns that you have in the *projected columns*.
 
 you can use the column position
 
+File: 03.sql
+
 ```
-select id, year, state, county
+select id, year, state, county_name
     from vote_by_county 
     order by 4, 3
 ;
+
+
 ```
+
+Output:
+
+```
+  id   | year |        state         |      county_name      
+-------+------+----------------------+-----------------------
+ 28679 | 2008 | South Carolina       | Abbeville
+ 38030 | 2012 | South Carolina       | Abbeville
+ 38029 | 2012 | South Carolina       | Abbeville
+ 38028 | 2012 | South Carolina       | Abbeville
+ 28677 | 2008 | South Carolina       | Abbeville
+  9148 | 2000 | South Carolina       | Abbeville
+  9147 | 2000 | South Carolina       | Abbeville
+  9146 | 2000 | South Carolina       | Abbeville
+  9145 | 2000 | South Carolina       | Abbeville
+ 19328 | 2004 | South Carolina       | Abbeville
+ 19326 | 2004 | South Carolina       | Abbeville
+ 19327 | 2004 | South Carolina       | Abbeville
+ 28678 | 2008 | South Carolina       | Abbeville
+ 47379 | 2016 | South Carolina       | Abbeville
+ ...
+ 38362 | 2012 | South Dakota         | Ziebach
+ 38363 | 2012 | South Dakota         | Ziebach
+ 29012 | 2008 | South Dakota         | Ziebach
+  9589 | 2000 | South Dakota         | Ziebach
+ 29011 | 2008 | South Dakota         | Ziebach
+ 29010 | 2008 | South Dakota         | Ziebach
+ 19661 | 2004 | South Dakota         | Ziebach
+ 19660 | 2004 | South Dakota         | Ziebach
+  9590 | 2000 | South Dakota         | Ziebach
+ 19659 | 2004 | South Dakota         | Ziebach
+  9591 | 2000 | South Dakota         | Ziebach
+ 38361 | 2012 | South Dakota         | Ziebach
+  9592 | 2000 | South Dakota         | Ziebach
+(72617 rows)
+
+
+```
+
 
 you can ascending or descending sort
 
+File: 04.sql
+
 ```
-select id, year, state, county
+select id, year, state, county_name
     from vote_by_county 
     order by 4 desc, 3 asc
 ;
+
+
+```
+
+Output:
+
+```
+  id   | year |        state         |      county_name      
+-------+------+----------------------+-----------------------
+  9591 | 2000 | South Dakota         | Ziebach
+ 19659 | 2004 | South Dakota         | Ziebach
+ 19660 | 2004 | South Dakota         | Ziebach
+ 19661 | 2004 | South Dakota         | Ziebach
+ 38361 | 2012 | South Dakota         | Ziebach
+ 38362 | 2012 | South Dakota         | Ziebach
+ 38363 | 2012 | South Dakota         | Ziebach
+ 29012 | 2008 | South Dakota         | Ziebach
+ 29011 | 2008 | South Dakota         | Ziebach
+  9589 | 2000 | South Dakota         | Ziebach
+ 29010 | 2008 | South Dakota         | Ziebach
+  9592 | 2000 | South Dakota         | Ziebach
+  9590 | 2000 | South Dakota         | Ziebach
+ 47714 | 2016 | South Dakota         | Ziebach
+ 47713 | 2016 | South Dakota         | Ziebach
+ 47712 | 2016 | South Dakota         | Ziebach
+ 69518 | 2020 | South Dakota         | Ziebach
+ 69517 | 2020 | South Dakota         | Ziebach
+ 69516 | 2020 | South Dakota         | Ziebach
+ 48761 | 2016 | Texas                | Zavala
+ 66637 | 2020 | Texas                | Zavala
+ 66633 | 2020 | Texas                | Zavala
+ ...
+  9148 | 2000 | South Carolina       | Abbeville
+ 38030 | 2012 | South Carolina       | Abbeville
+ 38029 | 2012 | South Carolina       | Abbeville
+ 38028 | 2012 | South Carolina       | Abbeville
+ 28677 | 2008 | South Carolina       | Abbeville
+ 28678 | 2008 | South Carolina       | Abbeville
+ 28679 | 2008 | South Carolina       | Abbeville
+ 19326 | 2004 | South Carolina       | Abbeville
+ 19327 | 2004 | South Carolina       | Abbeville
+(72617 rows)
+
+
 ```
 
 You can apply functions and operators to the columns.  In this case  I will
 add 10 to the year and concatenate, `||` the state and county.
 
+File: 05.sql
+
 ```
-select id, year + 10 as "x", state||', '||county as "Location"
+select id, year + 10 as "x", state||', '||county_name as "Location"
     from vote_by_county 
-    order by 4 desc, 3 asc
+    order by 3
 ;
+
+
+```
+Output:
+
+```
+  id   |  x   |                  Location                  
+-------+------+--------------------------------------------
+ 31169 | 2022 | Alabama, Autauga
+ 31168 | 2022 | Alabama, Autauga
+ 31167 | 2022 | Alabama, Autauga
+     1 | 2010 | Alabama, Autauga
+ 21818 | 2018 | Alabama, Autauga
+ 21817 | 2018 | Alabama, Autauga
+ 21816 | 2018 | Alabama, Autauga
+ 12465 | 2014 | Alabama, Autauga
+ 12466 | 2014 | Alabama, Autauga
+ 12467 | 2014 | Alabama, Autauga
+     4 | 2010 | Alabama, Autauga
+     3 | 2010 | Alabama, Autauga
+     2 | 2010 | Alabama, Autauga
+ 40519 | 2026 | Alabama, Autauga
+ 50527 | 2030 | Alabama, Autauga
+ 40518 | 2026 | Alabama, Autauga
+ 50525 | 2030 | Alabama, Autauga
+ ...
+ 49853 | 2026 | Wyoming, Uinta
+ 40502 | 2022 | Wyoming, Uinta
+ 40504 | 2022 | Wyoming, Washakie
+ 72610 | 2030 | Wyoming, Washakie
+ 72611 | 2030 | Wyoming, Washakie
+ 72612 | 2030 | Wyoming, Washakie
+ 72613 | 2030 | Wyoming, Washakie
+ 49856 | 2026 | Wyoming, Washakie
+ 40503 | 2022 | Wyoming, Washakie
+ 49855 | 2026 | Wyoming, Washakie
+ 49854 | 2026 | Wyoming, Washakie
+ 40505 | 2022 | Wyoming, Washakie
+ 12448 | 2010 | Wyoming, Washakie
+ 12447 | 2010 | Wyoming, Washakie
+ 12445 | 2010 | Wyoming, Washakie
+ 31152 | 2018 | Wyoming, Washakie
+ 31153 | 2018 | Wyoming, Washakie
+ 21803 | 2014 | Wyoming, Washakie
+ 21802 | 2014 | Wyoming, Washakie
+ 31154 | 2018 | Wyoming, Washakie
+ 21801 | 2014 | Wyoming, Washakie
+ 12446 | 2010 | Wyoming, Washakie
+ 12452 | 2010 | Wyoming, Weston
+ 12449 | 2010 | Wyoming, Weston
+ 31156 | 2018 | Wyoming, Weston
+ 31155 | 2018 | Wyoming, Weston
+ 12451 | 2010 | Wyoming, Weston
+ 21806 | 2014 | Wyoming, Weston
+ 21805 | 2014 | Wyoming, Weston
+ 21804 | 2014 | Wyoming, Weston
+ 12450 | 2010 | Wyoming, Weston
+ 31157 | 2018 | Wyoming, Weston
+ 49859 | 2026 | Wyoming, Weston
+ 72616 | 2030 | Wyoming, Weston
+ 40507 | 2022 | Wyoming, Weston
+ 49858 | 2026 | Wyoming, Weston
+ 49857 | 2026 | Wyoming, Weston
+ 72615 | 2030 | Wyoming, Weston
+ 40506 | 2022 | Wyoming, Weston
+ 72617 | 2030 | Wyoming, Weston
+ 72614 | 2030 | Wyoming, Weston
+ 40508 | 2022 | Wyoming, Weston
+(72617 rows)
+
+
 ```
 
 Single quotes denote string constants.  Double quotes denote things like tables and column names.
@@ -143,11 +408,14 @@ in your file names.  Python will crash with blanks in file names.
 We will be using more than one table in queries.  To do this we need to tell SQL the table.
 That is done with a table-alias.  In this case *t1*.
 
+File: 06.sql
+
 ```
-select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county as "Location"
+select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county_name as "Location"
     from vote_by_county  as t1
-    order by 4 desc, 3 asc
+    order by 3 asc
 ;
+
 
 ```
 
@@ -648,8 +916,13 @@ and string operations
 
 How About the square root operator!
 
+File: 07.sql
+
 ```
+
 select |/25.0;
+
+
 ```
 
 and a factorial operator!

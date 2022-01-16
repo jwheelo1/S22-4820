@@ -1,0 +1,36 @@
+  id   | year |        state         |      county_name      
+-------+------+----------------------+-----------------------
+  9591 | 2000 | South Dakota         | Ziebach
+ 19659 | 2004 | South Dakota         | Ziebach
+ 19660 | 2004 | South Dakota         | Ziebach
+ 19661 | 2004 | South Dakota         | Ziebach
+ 38361 | 2012 | South Dakota         | Ziebach
+ 38362 | 2012 | South Dakota         | Ziebach
+ 38363 | 2012 | South Dakota         | Ziebach
+ 29012 | 2008 | South Dakota         | Ziebach
+ 29011 | 2008 | South Dakota         | Ziebach
+  9589 | 2000 | South Dakota         | Ziebach
+ 29010 | 2008 | South Dakota         | Ziebach
+  9592 | 2000 | South Dakota         | Ziebach
+  9590 | 2000 | South Dakota         | Ziebach
+ 47714 | 2016 | South Dakota         | Ziebach
+ 47713 | 2016 | South Dakota         | Ziebach
+ 47712 | 2016 | South Dakota         | Ziebach
+ 69518 | 2020 | South Dakota         | Ziebach
+ 69517 | 2020 | South Dakota         | Ziebach
+ 69516 | 2020 | South Dakota         | Ziebach
+ 48761 | 2016 | Texas                | Zavala
+ 66637 | 2020 | Texas                | Zavala
+ 66633 | 2020 | Texas                | Zavala
+ ...
+  9148 | 2000 | South Carolina       | Abbeville
+ 38030 | 2012 | South Carolina       | Abbeville
+ 38029 | 2012 | South Carolina       | Abbeville
+ 38028 | 2012 | South Carolina       | Abbeville
+ 28677 | 2008 | South Carolina       | Abbeville
+ 28678 | 2008 | South Carolina       | Abbeville
+ 28679 | 2008 | South Carolina       | Abbeville
+ 19326 | 2004 | South Carolina       | Abbeville
+ 19327 | 2004 | South Carolina       | Abbeville
+(72617 rows)
+

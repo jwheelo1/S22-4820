@@ -1,0 +1,36 @@
+  id   | year |        state         |        county         
+-------+------+----------------------+-----------------------
+    16 | 2000 | Alabama              | Bibb
+  1992 | 2000 | Georgia              | Troup
+  4932 | 2000 | Michigan             | Ingham
+  5704 | 2000 | Mississippi          | Perry
+ 12884 | 2004 | Arkansas             | Pope
+ ...
+ 72592 | 2020 | Wyoming              | Sheridan
+ 72593 | 2020 | Wyoming              | Sheridan
+ 72594 | 2020 | Wyoming              | Sublette
+ 72595 | 2020 | Wyoming              | Sublette
+ 72596 | 2020 | Wyoming              | Sublette
+ 72597 | 2020 | Wyoming              | Sublette
+ 72598 | 2020 | Wyoming              | Sweetwater
+ 72599 | 2020 | Wyoming              | Sweetwater
+ 72600 | 2020 | Wyoming              | Sweetwater
+ 72601 | 2020 | Wyoming              | Sweetwater
+ 72602 | 2020 | Wyoming              | Teton
+ 72603 | 2020 | Wyoming              | Teton
+ 72604 | 2020 | Wyoming              | Teton
+ 72605 | 2020 | Wyoming              | Teton
+ 72606 | 2020 | Wyoming              | Uinta
+ 72607 | 2020 | Wyoming              | Uinta
+ 72608 | 2020 | Wyoming              | Uinta
+ 72609 | 2020 | Wyoming              | Uinta
+ 72610 | 2020 | Wyoming              | Washakie
+ 72611 | 2020 | Wyoming              | Washakie
+ 72612 | 2020 | Wyoming              | Washakie
+ 72613 | 2020 | Wyoming              | Washakie
+ 72614 | 2020 | Wyoming              | Weston
+ 72615 | 2020 | Wyoming              | Weston
+ 72616 | 2020 | Wyoming              | Weston
+ 72617 | 2020 | Wyoming              | Weston
+(72617 rows)
+

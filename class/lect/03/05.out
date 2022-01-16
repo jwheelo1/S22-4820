@@ -1,0 +1,64 @@
+  id   |  x   |                  Location                  
+-------+------+--------------------------------------------
+ 31169 | 2022 | Alabama, Autauga
+ 31168 | 2022 | Alabama, Autauga
+ 31167 | 2022 | Alabama, Autauga
+     1 | 2010 | Alabama, Autauga
+ 21818 | 2018 | Alabama, Autauga
+ 21817 | 2018 | Alabama, Autauga
+ 21816 | 2018 | Alabama, Autauga
+ 12465 | 2014 | Alabama, Autauga
+ 12466 | 2014 | Alabama, Autauga
+ 12467 | 2014 | Alabama, Autauga
+     4 | 2010 | Alabama, Autauga
+     3 | 2010 | Alabama, Autauga
+     2 | 2010 | Alabama, Autauga
+ 40519 | 2026 | Alabama, Autauga
+ 50527 | 2030 | Alabama, Autauga
+ 40518 | 2026 | Alabama, Autauga
+ 50525 | 2030 | Alabama, Autauga
+ ...
+ 49853 | 2026 | Wyoming, Uinta
+ 40502 | 2022 | Wyoming, Uinta
+ 40504 | 2022 | Wyoming, Washakie
+ 72610 | 2030 | Wyoming, Washakie
+ 72611 | 2030 | Wyoming, Washakie
+ 72612 | 2030 | Wyoming, Washakie
+ 72613 | 2030 | Wyoming, Washakie
+ 49856 | 2026 | Wyoming, Washakie
+ 40503 | 2022 | Wyoming, Washakie
+ 49855 | 2026 | Wyoming, Washakie
+ 49854 | 2026 | Wyoming, Washakie
+ 40505 | 2022 | Wyoming, Washakie
+ 12448 | 2010 | Wyoming, Washakie
+ 12447 | 2010 | Wyoming, Washakie
+ 12445 | 2010 | Wyoming, Washakie
+ 31152 | 2018 | Wyoming, Washakie
+ 31153 | 2018 | Wyoming, Washakie
+ 21803 | 2014 | Wyoming, Washakie
+ 21802 | 2014 | Wyoming, Washakie
+ 31154 | 2018 | Wyoming, Washakie
+ 21801 | 2014 | Wyoming, Washakie
+ 12446 | 2010 | Wyoming, Washakie
+ 12452 | 2010 | Wyoming, Weston
+ 12449 | 2010 | Wyoming, Weston
+ 31156 | 2018 | Wyoming, Weston
+ 31155 | 2018 | Wyoming, Weston
+ 12451 | 2010 | Wyoming, Weston
+ 21806 | 2014 | Wyoming, Weston
+ 21805 | 2014 | Wyoming, Weston
+ 21804 | 2014 | Wyoming, Weston
+ 12450 | 2010 | Wyoming, Weston
+ 31157 | 2018 | Wyoming, Weston
+ 49859 | 2026 | Wyoming, Weston
+ 72616 | 2030 | Wyoming, Weston
+ 40507 | 2022 | Wyoming, Weston
+ 49858 | 2026 | Wyoming, Weston
+ 49857 | 2026 | Wyoming, Weston
+ 72615 | 2030 | Wyoming, Weston
+ 40506 | 2022 | Wyoming, Weston
+ 72617 | 2030 | Wyoming, Weston
+ 72614 | 2030 | Wyoming, Weston
+ 40508 | 2022 | Wyoming, Weston
+(72617 rows)
+

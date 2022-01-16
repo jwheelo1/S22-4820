@@ -18,35 +18,13 @@ Ordr By [ Columns ]
 Let's use our table from last time
 
 ```
-create table vote_by_county (
-    id             serial primary key,
-    year           int default 2021,
-    state          text default '--',        -- irritatingly all upper case.
-    state_uc       text default '--',
-    state_po       varchar(2) default '--',     -- Incorrectly Named Column!
-    county_name    text default '--',        -- irritatingly all upper case.
-    county_name_uc text default '--',
-    county_fips    int default 0,
-    office         text default 'unk', 
-    candidate      text default 'unk', 
-    candidate_uc   text default 'unk', 
-    party          text default 'unk', 
-    candidatevotes int default 0, 
-    totalvotes     int default 0,
-    version        int,
-    vote_mode      text
-);
+m4_include(../02/create-tables.sql.nu)
 ```
 
 Let's just insert a few rows to see how insert works:
 
 ```
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Albeny',   1 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Big Horn', 2 );
-insert into vote_by_county  ( year, state, county_name, version ) values
-    ( 2022, 'Wyoming', 'Carbon',   8 );
+m4_include(../02/insert3.sql.nu)
 ```
 
 
@@ -70,49 +48,101 @@ select id, year as "Year of Our Lord"
 we can pick different columns
 
 
+File: 01.sql
+
 ```
+m4_include(01.sql)
+m4_comment([[[
 select id, year, state, county
     from vote_by_county 
 ;
+]]])
+```
+
+Output:
+
+```
+m4_include(01.out)
 ```
 
 How about sorting the data
 
+File: 02.sql
+
 ```
-select id, year, state, county
+m4_include(02.sql)
+m4_comment([[[
+select id, year, state, county_name
     from vote_by_county 
-    order by county, state
+    order by county_name, state
 ;
+]]])
+```
+
+Output:
+
+```
+m4_include(02.out)
 ```
 
 you can only sort by the columns that you have in the *projected columns*.
 
 you can use the column position
 
+File: 03.sql
+
 ```
-select id, year, state, county
+m4_include(03.sql)
+m4_comment([[[
+select id, year, state, county_name
     from vote_by_county 
     order by 4, 3
-;
+;]]])
 ```
+
+Output:
+
+```
+m4_include(03.out)
+```
+
 
 you can ascending or descending sort
 
+File: 04.sql
+
 ```
-select id, year, state, county
+m4_include(04.sql)
+m4_comment([[[
+select id, year, state, county_name
     from vote_by_county 
     order by 4 desc, 3 asc
-;
+;]]])
+```
+
+Output:
+
+```
+m4_include(04.out)
 ```
 
 You can apply functions and operators to the columns.  In this case  I will
 add 10 to the year and concatenate, `||` the state and county.
 
+File: 05.sql
+
 ```
-select id, year + 10 as "x", state||', '||county as "Location"
+m4_include(05.sql)
+m4_comment([[[
+select id, year + 10 as "x", state||', '||county_name as "Location"
     from vote_by_county 
     order by 4 desc, 3 asc
-;
+;]]])
+```
+Output:
+
+```
+m4_include(05.out)
 ```
 
 Single quotes denote string constants.  Double quotes denote things like tables and column names.
@@ -125,12 +155,15 @@ in your file names.  Python will crash with blanks in file names.
 We will be using more than one table in queries.  To do this we need to tell SQL the table.
 That is done with a table-alias.  In this case *t1*.
 
-```
-select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county as "Location"
-    from vote_by_county  as t1
-    order by 4 desc, 3 asc
-;
+File: 06.sql
 
+```
+m4_include(06.sql)
+m4_comment([[[
+select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county_name as "Location"
+    from vote_by_county  as t1
+    order by 3 asc
+;]]])
 ```
 
 There are lots of builtin functions that you can use and all sorts of arithmetic operators
@@ -630,8 +663,13 @@ and string operations
 
 How About the square root operator!
 
+File: 07.sql
+
 ```
+m4_include(07.sql)
+m4_comment([[[
 select |/25.0;
+]]])
 ```
 
 and a factorial operator!
