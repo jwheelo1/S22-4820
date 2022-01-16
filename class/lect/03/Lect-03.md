@@ -96,10 +96,10 @@ we can pick different columns
 File: 01.sql
 
 ```
-
-select id, year, state, county_name as "county"
-    from vote_by_county 
-;
+  1: 
+  2: select id, year, state, county_name as "county"
+  3:     from vote_by_county 
+  4: ;
 
 
 ```
@@ -151,10 +151,10 @@ How about sorting the data
 File: 02.sql
 
 ```
-select id, year, state, county_name
-    from vote_by_county 
-    order by county_name, state
-;
+  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by county_name, state
+  4: ;
 
 
 ```
@@ -213,10 +213,10 @@ you can use the column position
 File: 03.sql
 
 ```
-select id, year, state, county_name
-    from vote_by_county 
-    order by 4, 3
-;
+  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by 4, 3
+  4: ;
 
 
 ```
@@ -265,10 +265,10 @@ you can ascending or descending sort
 File: 04.sql
 
 ```
-select id, year, state, county_name
-    from vote_by_county 
-    order by 4 desc, 3 asc
-;
+  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by 4 desc, 3 asc
+  4: ;
 
 
 ```
@@ -321,10 +321,10 @@ add 10 to the year and concatenate, `||` the state and county.
 File: 05.sql
 
 ```
-select id, year + 10 as "x", state||', '||county_name as "Location"
-    from vote_by_county 
-    order by 3
-;
+  1: select id, year + 10 as "x", state||', '||county_name as "Location"
+  2:     from vote_by_county 
+  3:     order by 3
+  4: ;
 
 
 ```
@@ -411,10 +411,10 @@ That is done with a table-alias.  In this case *t1*.
 File: 06.sql
 
 ```
-select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county_name as "Location"
-    from vote_by_county  as t1
-    order by 3 asc
-;
+  1: select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county_name as "Location"
+  2:     from vote_by_county  as t1
+  3:     order by 3 asc
+  4: ;
 
 
 ```

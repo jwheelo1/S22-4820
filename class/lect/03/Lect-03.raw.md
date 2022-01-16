@@ -51,7 +51,7 @@ we can pick different columns
 File: 01.sql
 
 ```
-m4_include(01.sql)
+m4_include(01.sql.nu)
 m4_comment([[[
 select id, year, state, county
     from vote_by_county 
@@ -70,7 +70,7 @@ How about sorting the data
 File: 02.sql
 
 ```
-m4_include(02.sql)
+m4_include(02.sql.nu)
 m4_comment([[[
 select id, year, state, county_name
     from vote_by_county 
@@ -92,7 +92,7 @@ you can use the column position
 File: 03.sql
 
 ```
-m4_include(03.sql)
+m4_include(03.sql.nu)
 m4_comment([[[
 select id, year, state, county_name
     from vote_by_county 
@@ -112,7 +112,7 @@ you can ascending or descending sort
 File: 04.sql
 
 ```
-m4_include(04.sql)
+m4_include(04.sql.nu)
 m4_comment([[[
 select id, year, state, county_name
     from vote_by_county 
@@ -132,7 +132,7 @@ add 10 to the year and concatenate, `||` the state and county.
 File: 05.sql
 
 ```
-m4_include(05.sql)
+m4_include(05.sql.nu)
 m4_comment([[[
 select id, year + 10 as "x", state||', '||county_name as "Location"
     from vote_by_county 
@@ -158,7 +158,7 @@ That is done with a table-alias.  In this case *t1*.
 File: 06.sql
 
 ```
-m4_include(06.sql)
+m4_include(06.sql.nu)
 m4_comment([[[
 select t1.id, t1.year + 10 as "x", t1.state||', '||t1.county_name as "Location"
     from vote_by_county  as t1

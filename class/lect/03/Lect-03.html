@@ -794,10 +794,10 @@ Ordr By [ Columns ]
 
 <p>File: 01.sql</p>
 
-<pre><code>
-select id, year, state, county_name as &quot;county&quot;
-    from vote_by_county 
-;
+<pre><code>  1: 
+  2: select id, year, state, county_name as &quot;county&quot;
+  3:     from vote_by_county 
+  4: ;
 
 
 </code></pre>
@@ -847,10 +847,10 @@ select id, year, state, county_name as &quot;county&quot;
 
 <p>File: 02.sql</p>
 
-<pre><code>select id, year, state, county_name
-    from vote_by_county 
-    order by county_name, state
-;
+<pre><code>  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by county_name, state
+  4: ;
 
 
 </code></pre>
@@ -907,10 +907,10 @@ select id, year, state, county_name as &quot;county&quot;
 
 <p>File: 03.sql</p>
 
-<pre><code>select id, year, state, county_name
-    from vote_by_county 
-    order by 4, 3
-;
+<pre><code>  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by 4, 3
+  4: ;
 
 
 </code></pre>
@@ -956,10 +956,10 @@ select id, year, state, county_name as &quot;county&quot;
 
 <p>File: 04.sql</p>
 
-<pre><code>select id, year, state, county_name
-    from vote_by_county 
-    order by 4 desc, 3 asc
-;
+<pre><code>  1: select id, year, state, county_name
+  2:     from vote_by_county 
+  3:     order by 4 desc, 3 asc
+  4: ;
 
 
 </code></pre>
@@ -1010,10 +1010,10 @@ add 10 to the year and concatenate, <code>||</code> the state and county.</p>
 
 <p>File: 05.sql</p>
 
-<pre><code>select id, year + 10 as &quot;x&quot;, state||', '||county_name as &quot;Location&quot;
-    from vote_by_county 
-    order by 3
-;
+<pre><code>  1: select id, year + 10 as &quot;x&quot;, state||', '||county_name as &quot;Location&quot;
+  2:     from vote_by_county 
+  3:     order by 3
+  4: ;
 
 
 </code></pre>
@@ -1099,10 +1099,10 @@ That is done with a table-alias.  In this case <em>t1</em>.</p>
 
 <p>File: 06.sql</p>
 
-<pre><code>select t1.id, t1.year + 10 as &quot;x&quot;, t1.state||', '||t1.county_name as &quot;Location&quot;
-    from vote_by_county  as t1
-    order by 3 asc
-;
+<pre><code>  1: select t1.id, t1.year + 10 as &quot;x&quot;, t1.state||', '||t1.county_name as &quot;Location&quot;
+  2:     from vote_by_county  as t1
+  3:     order by 3 asc
+  4: ;
 
 
 </code></pre>
