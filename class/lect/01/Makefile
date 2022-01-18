@@ -3,7 +3,7 @@ PP=`pwd`
 FN=Lect-01
 DIR=../../../
 IMG=
-PY= 
+PY= usage.png
 
 
 all: setup all2
