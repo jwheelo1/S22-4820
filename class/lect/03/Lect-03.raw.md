@@ -21,12 +21,15 @@ Let's use our table from last time
 m4_include(../02/create-tables.sql.nu)
 ```
 
+m4_comment([[[
+
 Let's just insert a few rows to see how insert works:
 
 ```
 m4_include(../02/insert3.sql.nu)
 ```
 
+]]])
 
 and do some selects with the projected columns.
 
@@ -178,6 +181,65 @@ of Go but I haven't used it for stored-procedure/functions yet in PostgreSQL.
 Using a C function requires re-loading and re-starting the database - so it is hard.
 
 
+Get the list of all of the candidates in the data.
+
+```
+m4_include(../02/county/wX.sql.nu)
+m4_comment([[[
+select distinct candidate from vote_by_county ;
+]]])
+```
+
+Find out what counties where voted in:
+
+
+```
+m4_include(../02/county/w0.sql.nu)
+m4_comment([[[
+
+-- Find the set of counties that voted for "Sleepy Joe" in 2020
+
+select t1.state, t1.county_name
+	from vote_by_county as t1
+	where t1.year = 2020
+		and t1.candidate = 'Joseph R Biden Jr'
+	order by state, county_name
+;
+
+select t1.state, t1.county_name
+	from vote_by_county as t1
+	where t1.year = 2020
+		and t1.candidate = 'Donald J Trump'
+	order by state, county_name
+;
+
+]]])
+```
+
+The question is who won?  To find that we have to find the candidate that had the most votes
+in each county.  We need to use the "max" in a county.
+
+```
+m4_include(../02/county/w1.sql.nu)
+m4_comment([[[
+
+-- Find the set of counties that voted for "Sleepy Joe" in 2020
+
+select t1.state, t1.county_name
+from vote_by_county as t1
+where t1.year = 2020
+	and t1.candidate = 'Joseph R Biden Jr'
+	and t1.candidatevotes = (
+		select max(t2.candidatevotes) as max_votes
+		from vote_by_county as t2
+		where t2.state = t1.state
+		  and t2.county_name = t1.county_name
+	)
+	order by state, county_name
+	;
+
+]]])
+```
 
 
 

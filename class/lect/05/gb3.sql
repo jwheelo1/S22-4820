@@ -1,7 +1,7 @@
 select state, candidate,  
 		min(year) as year,
 		sum(candidatevotes) as votes_for_candiate,
-		sum(totalvotes) total_votes, 
+		sum(totalvotes) total_votes
 	from vote_by_county as t1
 	where t1.year = 2020
 	group by t1.state, t1.candidate      

@@ -763,19 +763,6 @@ Ordr By [ Columns ]
 
 </code></pre>
 
-<p>Let&rsquo;s just insert a few rows to see how insert works:</p>
-
-<pre><code>  1: -- \c l02
-  2: 
-  3: insert into vote_by_county  ( year, state, county_name, version ) values
-  4:     ( 2022, 'Wyoming', 'Albeny',   1 );
-  5: insert into vote_by_county  ( year, state, county_name, version ) values
-  6:     ( 2022, 'Wyoming', 'Big Horn', 2 );
-  7: insert into vote_by_county  ( year, state, county_name, version ) values
-  8:     ( 2022, 'Wyoming', 'Carbon',   8 );
-
-</code></pre>
-
 <p>and do some selects with the projected columns.</p>
 
 <pre><code>select id, year
@@ -1117,6 +1104,36 @@ slower than PG/SQL.  C is 10x faster than PG/SQL.  These are rough numbers.   I 
 of Go but I haven&rsquo;t used it for stored-procedure/functions yet in PostgreSQL.</p>
 
 <p>Using a C function requires re-loading and re-starting the database - so it is hard.</p>
+
+<p>Get the list of all of the candidates in the data.</p>
+
+<pre><code>
+
+</code></pre>
+
+<p>Find out what counties where voted in:</p>
+
+<pre><code>  1: 
+  2: -- Find the set of counties that voted for &quot;Sleepy Joe&quot; in 2020
+  3: 
+  4: select t1.state, t1.county_name
+  5: from vote_by_county as t1
+  6: where t1.year = 2020
+  7:     and t1.candidate = 'Joe Biden'
+  8: order by state, county_name
+  9: 
+ 10: 
+ 11: 
+
+
+</code></pre>
+
+<p>The question is who won?  To find that we have to find the candidate that had the most votes
+in each county.  We need to use the &ldquo;max&rdquo; in a county.</p>
+
+<pre><code>
+
+</code></pre>
 
 <h2>Operators</h2>
 

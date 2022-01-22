@@ -1,0 +1,37 @@
+        state         |     candidate     | min  | votes_for_candiate | total_votes 
+----------------------+-------------------+------+--------------------+-------------
+ Alabama              | Donald J Trump    | 2020 |            1441170 |     2323282
+ Alabama              | Joseph R Biden Jr | 2020 |             849624 |     2323282
+ Alabama              | Other             | 2020 |              32488 |     2323282
+ Alaska               | Donald J Trump    | 2020 |             189951 |      357569
+ Alaska               | Jo Jorgensen      | 2020 |               8897 |      357569
+ Alaska               | Joseph R Biden Jr | 2020 |             153778 |      357569
+ Alaska               | Other             | 2020 |               4943 |      715138
+ Arizona              | Donald J Trump    | 2020 |            1661686 |    10155882
+ Arizona              | Jo Jorgensen      | 2020 |              51465 |    10155882
+ Arizona              | Joseph R Biden Jr | 2020 |            1672143 |    10155882
+ Arizona              | Other             | 2020 |                  0 |    20311764
+ Arkansas             | Donald J Trump    | 2020 |             760647 |     4876276
+ ...
+ Vermont              | Other             | 2020 |              11684 |      741652
+ Virginia             | Donald J Trump    | 2020 |            1962430 |    13386199
+ Virginia             | Jo Jorgensen      | 2020 |              64761 |    13386199
+ Virginia             | Joseph R Biden Jr | 2020 |            2413568 |    13386199
+ Virginia             | Other             | 2020 |              21841 |    13386199
+ Washington           | Donald J Trump    | 2020 |            1584651 |     4087631
+ Washington           | Jo Jorgensen      | 2020 |              80500 |     4087631
+ Washington           | Joseph R Biden Jr | 2020 |            2369612 |     4087631
+ Washington           | Other             | 2020 |              52868 |     8175262
+ West Virginia        | Donald J Trump    | 2020 |             545382 |      794652
+ West Virginia        | Jo Jorgensen      | 2020 |              10687 |      794652
+ West Virginia        | Joseph R Biden Jr | 2020 |             235984 |      794652
+ West Virginia        | Other             | 2020 |               2599 |      794652
+ Wisconsin            | Donald J Trump    | 2020 |            1610065 |     3297352
+ Wisconsin            | Jo Jorgensen      | 2020 |              38491 |     3297352
+ Wisconsin            | Joseph R Biden Jr | 2020 |            1630673 |     3297352
+ Wisconsin            | Other             | 2020 |              18123 |     6594704
+ Wyoming              | Donald J Trump    | 2020 |             193559 |      278503
+ Wyoming              | Jo Jorgensen      | 2020 |               5768 |      278503
+ Wyoming              | Joseph R Biden Jr | 2020 |              73491 |      278503
+ Wyoming              | Other             | 2020 |               5685 |      278503
+(195 rows)

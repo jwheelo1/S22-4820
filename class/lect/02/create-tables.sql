@@ -1,4 +1,4 @@
--- \c l02
+\c l02
 create table vote_by_county (
 	id				serial primary key,
 	year			int default 2021,

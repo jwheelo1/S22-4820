@@ -1,0 +1,55 @@
+philip=# \i gb3.sql
+        state         |     candidate     | year | votes_for_candiate | total_votes
+----------------------+-------------------+------+--------------------+-------------
+ Alabama              | Donald J Trump    | 2020 |            1441170 |     2323282
+ Alaska               | Donald J Trump    | 2020 |             189951 |      357569
+ Arizona              | Joseph R Biden Jr | 2020 |            1672143 |    10155882
+ Arkansas             | Donald J Trump    | 2020 |             760647 |     4876276
+ California           | Joseph R Biden Jr | 2020 |           11110250 |    17212389
+ Colorado             | Joseph R Biden Jr | 2020 |            1804352 |     3256980
+ Connecticut          | Joseph R Biden Jr | 2020 |            1080831 |     1823857
+ Delaware             | Joseph R Biden Jr | 2020 |             296268 |      504010
+ District Of Columbia | Joseph R Biden Jr | 2020 |             317323 |      344356
+ Florida              | Donald J Trump    | 2020 |            5668731 |    11067456
+ Georgia              | Joseph R Biden Jr | 2020 |            2474507 |    19993928
+ Hawaii               | Joseph R Biden Jr | 2020 |             366127 |      574457
+ Idaho                | Donald J Trump    | 2020 |             554119 |      867361
+ Illinois             | Joseph R Biden Jr | 2020 |            3471915 |     6033744
+ Indiana              | Donald J Trump    | 2020 |            1729519 |     3033121
+ Iowa                 | Donald J Trump    | 2020 |             902009 |     3381742
+ Kansas               | Donald J Trump    | 2020 |             771406 |     1372303
+ Kentucky             | Donald J Trump    | 2020 |            1326418 |     2134996
+ Louisiana            | Donald J Trump    | 2020 |            1255776 |     2148062
+ Maine                | Joseph R Biden Jr | 2020 |             430473 |      822534
+ Maryland             | Joseph R Biden Jr | 2020 |            1985023 |    15185155
+ Massachusetts        | Joseph R Biden Jr | 2020 |            2382202 |     3658005
+ Michigan             | Joseph R Biden Jr | 2020 |            2804040 |     5539302
+ Minnesota            | Joseph R Biden Jr | 2020 |            1717077 |     3277171
+ Mississippi          | Donald J Trump    | 2020 |             756764 |     1313759
+ Missouri             | Donald J Trump    | 2020 |            1718736 |     3025962
+ Montana              | Donald J Trump    | 2020 |             343602 |      603640
+ Nebraska             | Donald J Trump    | 2020 |             556846 |      951712
+ Nevada               | Joseph R Biden Jr | 2020 |             703314 |     1404911
+ New Hampshire        | Joseph R Biden Jr | 2020 |             424937 |      803833
+ New Jersey           | Joseph R Biden Jr | 2020 |            2608335 |     4549353
+ New Mexico           | Joseph R Biden Jr | 2020 |             501614 |      923965
+ New York             | Joseph R Biden Jr | 2020 |            5230985 |     8661735
+ North Carolina       | Donald J Trump    | 2020 |            2758773 |    22099208
+ North Dakota         | Donald J Trump    | 2020 |             235595 |      361819
+ Ohio                 | Donald J Trump    | 2020 |            3154834 |     5922202
+ Oklahoma             | Donald J Trump    | 2020 |            1020280 |     4682097
+ Oregon               | Joseph R Biden Jr | 2020 |            1340383 |     2374321
+ Pennsylvania         | Joseph R Biden Jr | 2020 |            3458229 |     6915283
+ Rhode Island         | Joseph R Biden Jr | 2020 |             307486 |      517757
+ South Carolina       | Donald J Trump    | 2020 |            1385103 |    15079974
+ South Dakota         | Donald J Trump    | 2020 |             261043 |      422609
+ Tennessee            | Donald J Trump    | 2020 |            1852475 |     3053851
+ Texas                | Donald J Trump    | 2020 |            5890347 |    11315056
+ Utah                 | Donald J Trump    | 2020 |             865139 |     5434835
+ Vermont              | Joseph R Biden Jr | 2020 |             242826 |      370826
+ Virginia             | Joseph R Biden Jr | 2020 |            2413568 |    13386199
+ Washington           | Joseph R Biden Jr | 2020 |            2369612 |     4087631
+ West Virginia        | Donald J Trump    | 2020 |             545382 |      794652
+ Wisconsin            | Joseph R Biden Jr | 2020 |            1630673 |     3297352
+ Wyoming              | Donald J Trump    | 2020 |             193559 |      278503
+(51 rows)

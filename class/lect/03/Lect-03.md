@@ -58,19 +58,6 @@ Let's use our table from last time
 
 ```
 
-Let's just insert a few rows to see how insert works:
-
-```
-  1: -- \c l02
-  2: 
-  3: insert into vote_by_county  ( year, state, county_name, version ) values
-  4:     ( 2022, 'Wyoming', 'Albeny',   1 );
-  5: insert into vote_by_county  ( year, state, county_name, version ) values
-  6:     ( 2022, 'Wyoming', 'Big Horn', 2 );
-  7: insert into vote_by_county  ( year, state, county_name, version ) values
-  8:     ( 2022, 'Wyoming', 'Carbon',   8 );
-
-```
 
 
 and do some selects with the projected columns.
@@ -431,6 +418,39 @@ of Go but I haven't used it for stored-procedure/functions yet in PostgreSQL.
 Using a C function requires re-loading and re-starting the database - so it is hard.
 
 
+Get the list of all of the candidates in the data.
+
+```
+
+
+```
+
+Find out what counties where voted in:
+
+
+```
+  1: 
+  2: -- Find the set of counties that voted for "Sleepy Joe" in 2020
+  3: 
+  4: select t1.state, t1.county_name
+  5: from vote_by_county as t1
+  6: where t1.year = 2020
+  7:     and t1.candidate = 'Joe Biden'
+  8: order by state, county_name
+  9: 
+ 10: 
+ 11: 
+
+
+```
+
+The question is who won?  To find that we have to find the candidate that had the most votes
+in each county.  We need to use the "max" in a county.
+
+```
+
+
+```
 
 
 
