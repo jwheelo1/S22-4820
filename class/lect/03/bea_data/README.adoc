@@ -2,3 +2,19 @@ Data From :
 https://www.bea.gov/data/income-saving/personal-income-county-metro-and-other-areas
 
 Source. U.S. Bureau of Economic Analysis (BEA)
+
+Steps:
+
+1. run the create table
+
+	$ psql
+	demo=# \i bea_growth_data.sql
+	demo=# \q
+	$
+
+2. Load the data
+
+	$ psql
+	demo=$ \i load-bea-data.sql
+	demo=# \q
+	$

@@ -6,11 +6,12 @@ create table bea_growth_data (
 	id serial not null primary key,
 	state text not null,
 	county_name text not null,
-	dollars_2018 int,
-	dollars_2019 int,
-	dollars_2020 int,
+	dollars_2018 int,		-- per capita personal income
+	dollars_2019 int,		-- per capita personal income
+	dollars_2020 int,		-- per capita personal income
 	rank_in_state_2020 int,
 	pct_change_2019 float,
 	pct_change_2020 float,
 	rank_in_state_2020_b int
 );
+

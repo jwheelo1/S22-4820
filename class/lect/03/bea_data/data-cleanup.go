@@ -11,6 +11,11 @@ import (
 
 var marker = ",,,,,,,"
 var end_marker = "(NA) Not available,,,,,,,"
+var skip1 = ":,,,,"
+var skip2 = " + "
+
+// Virginia,Combination areas3:,,,,,,,
+// Virginia,Albemarle + Charlottesville,74603,75885,77606,7,1.7,2.3,104
 
 // package read_lines
 // type FileProcess func(line, file_name string, line_no int) (err error)
@@ -25,6 +30,8 @@ func main() {
 		field := strings.Split(line, ",")
 		if (st == 0 || st == 2) && line == marker {
 			st = 1
+		} else if (st == 0 || st == 2) && strings.Contains(line, skip1) {
+		} else if (st == 0 || st == 2) && strings.Contains(line, skip2) {
 		} else if (st == 0 || st == 2) && line == end_marker {
 			st = 4
 		} else if st == 1 {
