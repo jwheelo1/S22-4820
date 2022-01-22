@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
+	"regexp"
 	"strings"
 
 	"git.q8s.co/pschlump/read_lines"
@@ -29,11 +31,31 @@ func main() {
 			state_name = field[0]
 			st = 2
 		} else if st == 2 {
-			fmt.Printf("%s,%s\n", state_name, line)
+			field = SplitCSV(line)
+			// fmt.Printf("%s,%s\n", state_name, line)
+			fmt.Printf("%s,", state_name)
+			field[1] = strings.Replace(field[1], ",", "", -1)
+			field[2] = strings.Replace(field[2], ",", "", -1)
+			field[3] = strings.Replace(field[3], ",", "", -1)
+			note := regexp.MustCompile(` \(includ.*\)`)
+			field[0] = note.ReplaceAllString(field[0], "")
+			for i, v := range field {
+				if i == len(field)-1 {
+					fmt.Printf("%s\n", v)
+				} else {
+					fmt.Printf("%s,", v)
+				}
+			}
 		}
 		return
 	})
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
 	}
+}
+
+func SplitCSV(in string) (rv []string) {
+	r := csv.NewReader(strings.NewReader(in))
+	rv, _ = r.Read()
+	return
 }
