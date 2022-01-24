@@ -3,6 +3,10 @@ m4_include(../../../setup.m4)
 # Lecture 03 - Select
 ## Jan 25
 
+## Open Source Used More
+
+![Open-Source.png](Open-Source.png)
+
 
 ```
 Select [ Projected Columns ]
