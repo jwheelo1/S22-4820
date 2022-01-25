@@ -40,24 +40,24 @@ Ordr By [ Columns ]
 Let's use our table from last time
 
 ```
-  1: -- \c l02
+  1: \c l02
   2: create table vote_by_county (
-  3:     id                serial primary key,
-  4:     year            int default 2021,
-  5:     state            text default '--',        -- irritatingly all upper case.
-  6:     state_uc        text default '--',
-  7:     state_po        varchar(2) default '--',     -- Incorrectly Named Column!
-  8:     county_name        text default '--',        -- irritatingly all upper case.
-  9:     county_name_uc    text default '--',
- 10:     county_fips        int default 0,
- 11:     office            text default 'unk', 
- 12:     candidate        text default 'unk', 
- 13:     candidate_uc    text default 'unk', 
- 14:     party            text default 'unk', 
- 15:     candidatevotes    int default 0, 
- 16:     totalvotes        int default 0,
- 17:     version            int,
- 18:     vote_mode        text
+  3:     id             serial primary key,
+  4:     year           int default 2021,
+  5:     state          text default '--',        -- irritatingly all upper case.
+  6:     state_uc       text default '--',
+  7:     state_po       varchar(2) default '--',     -- Incorrectly Named Column!
+  8:     county_name    text default '--',        -- irritatingly all upper case.
+  9:     county_name_uc text default '--',
+ 10:     county_fips    int default 0,
+ 11:     office         text default 'unk', 
+ 12:     candidate      text default 'unk', 
+ 13:     candidate_uc   text default 'unk', 
+ 14:     party          text default 'unk', 
+ 15:     candidatevotes int default 0, 
+ 16:     totalvotes     int default 0,
+ 17:     version        int,
+ 18:     vote_mode      text
  19: );
 
 ```
@@ -87,10 +87,9 @@ we can pick different columns
 File: 01.sql
 
 ```
-  1: 
-  2: select id, year, state, county_name as "county"
-  3:     from vote_by_county 
-  4: ;
+  1: select id, year, state, county_name as "county"
+  2:     from vote_by_county 
+  3: ;
 
 
 ```
@@ -425,6 +424,7 @@ Using a C function requires re-loading and re-starting the database - so it is h
 Get the list of all of the candidates in the data.
 
 ```
+  1: select distinct candidate from vote_by_county ;
 
 
 ```
@@ -437,13 +437,19 @@ Find out what counties where voted in:
   2: -- Find the set of counties that voted for "Sleepy Joe" in 2020
   3: 
   4: select t1.state, t1.county_name
-  5: from vote_by_county as t1
-  6: where t1.year = 2020
-  7:     and t1.candidate = 'Joe Biden'
-  8: order by state, county_name
-  9: 
+  5:     from vote_by_county as t1
+  6:     where t1.year = 2020
+  7:         and t1.candidate = 'Joseph R Biden Jr'
+  8:     order by state, county_name
+  9: ;
  10: 
- 11: 
+ 11: select t1.state, t1.county_name
+ 12:     from vote_by_county as t1
+ 13:     where t1.year = 2020
+ 14:         and t1.candidate = 'Donald J Trump'
+ 15:     order by state, county_name
+ 16: ;
+ 17: 
 
 
 ```
@@ -452,6 +458,23 @@ The question is who won?  To find that we have to find the candidate that had th
 in each county.  We need to use the "max" in a county.
 
 ```
+  1: 
+  2: -- Find the set of counties that voted for "Sleepy Joe" in 2020
+  3: 
+  4: select t1.state, t1.county_name
+  5: from vote_by_county as t1
+  6: where t1.year = 2020
+  7:     and t1.candidate = 'Joseph R Biden Jr'
+  8:     and t1.candidatevotes = (
+  9:         select max(t2.candidatevotes) as max_votes
+ 10:         from vote_by_county as t2
+ 11:         where t2.state = t1.state
+ 12:           and t2.county_name = t1.county_name
+ 13:     )
+ 14:     order by state, county_name
+ 15:     ;
+ 16: 
+ 17: 
 
 
 ```

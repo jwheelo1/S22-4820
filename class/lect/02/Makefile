@@ -13,7 +13,7 @@ PY=  \
 	county/vote_by_county_post.sql \
 	county/w0.sql \
 	county/what-counties-voted-for-joe.sql \
-	county/who-wran-in-2020.sql \
+	county/who-won-in-2020.sql \
 	covid-19-data/load-us-recent.sql \
 	covid-19-data/us-counties-recent-post.sql \
 	covid-19-data/us-counties-recent.sql \
