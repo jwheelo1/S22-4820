@@ -254,6 +254,7 @@ where t1.year = 2020
 
 There are lots!
 
+<div class="pagebreak"></div>
 
 <table border="1" class="CALSTABLE">
       <colgroup><col>
@@ -375,8 +376,9 @@ There are lots!
   <table>
 
 
-and string operations
+<div class="pagebreak"></div>
 
+### string operations
 
 <table border="1" class="CALSTABLE">
       <colgroup><col>
@@ -512,9 +514,9 @@ and string operations
     </table>
 
 
+<div class="pagebreak"></div>
 
 ### Base Functions
-
 
 <table border="1" class="CALSTABLE">
       <colgroup><col>
