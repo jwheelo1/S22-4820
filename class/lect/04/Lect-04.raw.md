@@ -1,8 +1,7 @@
 m4_include(../../../setup.m4)
 
 # Lecture 04 - More Select
-## Jan 27
-
+## Thu Jan 27 2022
 
 ```
 Select [ Projected Columns ]
@@ -145,13 +144,13 @@ This will give us all the counties that the candidate won.
 
 
 ```
-m4_include(joe_biden__counties.sql)
+m4_include(joe_biden_counties.sql.nu)
 ```
 
 And the former president
 
 ```
-m4_include(dt_counties.sql)
+m4_include(dt_counties.sql.nu)
 ```
 
 

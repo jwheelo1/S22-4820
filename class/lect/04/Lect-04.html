@@ -728,7 +728,7 @@ table {
 
 <h1>Lecture 04 - More Select</h1>
 
-<h2>Jan 27</h2>
+<h2>Thu Jan 27 2022</h2>
 
 <pre><code>Select [ Projected Columns ]
 From Table ...
@@ -861,23 +861,38 @@ update vote_by_county
 <p>And now let&rsquo;s apply this for all of a single candidate.
 This will give us all the counties that the candidate won.</p>
 
-<pre><code>
+<pre><code>  1: 
+  2: -- Find the set of counties that voted for &quot;Sleepy Joe&quot; in 2020
+  3: 
+  4: select t1.state, t1.county_name
+  5: from vote_by_county as t1
+  6: where t1.year = 2020
+  7:     and t1.candidate = 'Joseph R Biden Jr'
+  8:     and t1.candidatevotes = (
+  9:         select max(t2.candidatevotes) as max_votes
+ 10:         from vote_by_county as t2
+ 11:         where t2.state = t1.state
+ 12:           and t2.county_name = t1.county_name
+ 13:     )
+ 14:     order by state, county_name
+ 15:     ;
+
 </code></pre>
 
 <p>And the former president</p>
 
-<pre><code>select t1.state, t1.county_name
-from vote_by_county as t1
-where t1.year = 2020
-	and t1.candidate = 'Donald J Trump'
-	and t1.candidatevotes = (
-		select max(t2.candidatevotes) as max_votes
-		from vote_by_county as t2
-		where t2.state = t1.state
-		  and t2.county_name = t1.county_name
-	)
-	order by state, county_name
-;
+<pre><code>  1: select t1.state, t1.county_name
+  2: from vote_by_county as t1
+  3: where t1.year = 2020
+  4:     and t1.candidate = 'Donald J Trump'
+  5:     and t1.candidatevotes = (
+  6:         select max(t2.candidatevotes) as max_votes
+  7:         from vote_by_county as t2
+  8:         where t2.state = t1.state
+  9:           and t2.county_name = t1.county_name
+ 10:     )
+ 11:     order by state, county_name
+ 12: ;
 
 </code></pre>
 
@@ -1366,6 +1381,8 @@ where t1.year = 2020
 <p>File: 07.sql</p>
 
 <pre><code>
+select |/25.0;
+
 
 </code></pre>
 

@@ -19,8 +19,7 @@ table {
 
 
 # Lecture 04 - More Select
-## Jan 27
-
+## Thu Jan 27 2022
 
 ```
 Select [ Projected Columns ]
@@ -170,24 +169,39 @@ This will give us all the counties that the candidate won.
 
 
 ```
+  1: 
+  2: -- Find the set of counties that voted for "Sleepy Joe" in 2020
+  3: 
+  4: select t1.state, t1.county_name
+  5: from vote_by_county as t1
+  6: where t1.year = 2020
+  7:     and t1.candidate = 'Joseph R Biden Jr'
+  8:     and t1.candidatevotes = (
+  9:         select max(t2.candidatevotes) as max_votes
+ 10:         from vote_by_county as t2
+ 11:         where t2.state = t1.state
+ 12:           and t2.county_name = t1.county_name
+ 13:     )
+ 14:     order by state, county_name
+ 15:     ;
 
 ```
 
 And the former president
 
 ```
-select t1.state, t1.county_name
-from vote_by_county as t1
-where t1.year = 2020
-	and t1.candidate = 'Donald J Trump'
-	and t1.candidatevotes = (
-		select max(t2.candidatevotes) as max_votes
-		from vote_by_county as t2
-		where t2.state = t1.state
-		  and t2.county_name = t1.county_name
-	)
-	order by state, county_name
-;
+  1: select t1.state, t1.county_name
+  2: from vote_by_county as t1
+  3: where t1.year = 2020
+  4:     and t1.candidate = 'Donald J Trump'
+  5:     and t1.candidatevotes = (
+  6:         select max(t2.candidatevotes) as max_votes
+  7:         from vote_by_county as t2
+  8:         where t2.state = t1.state
+  9:           and t2.county_name = t1.county_name
+ 10:     )
+ 11:     order by state, county_name
+ 12: ;
 
 ```
 
@@ -678,6 +692,8 @@ How About the square root operator!
 File: 07.sql
 
 ```
+
+select |/25.0;
 
 
 ```
