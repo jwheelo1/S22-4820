@@ -736,6 +736,28 @@ table {
 
 <p>Load the data in <code>clean-data.csv</code>  using the <code>load-bea-data.sql</code> script.</p>
 
+<p>Load the data in <code>election_2020.csv</code>  using the <code>load-election_2020.sql</code> script.</p>
+
+<p>Construct a select statement  that will count the number of
+counties that each candidate won.</p>
+
+<p>Example Output:</p>
+
+<pre><code>$ psql
+Pager usage is off.
+psql (14.0, server 13.4)
+Type &quot;help&quot; for help.
+
+philip=# \o part1.out
+philip=# \i ans-count-counties.sql
+      winner       | # Of Counties Won
+-------------------+-------------------
+ Joseph R Biden Jr |               293
+ Donald J Trump    |              1798
+(2 rows)
+philip=# \q
+</code></pre>
+
 <p>Construct a select statement that will take the data
 and combine it with the county election data in
 the table <code>election_2020</code> (data provided - see the lecture 2
@@ -751,19 +773,24 @@ Pager usage is off.
 psql (14.0, server 13.4)
 Type &quot;help&quot; for help.
 
+philip=# \o part2.out
 philip=# \i ans-per-capita-by-candidate.sql
       Winner       | Average Per Capita 2020 Income
 -------------------+--------------------------------
- Donald J Trump    |                       42823.50
- Joseph R Biden Jr |                      118750.50
+ Joseph R Biden Jr |                       65488.43
+ Donald J Trump    |                       48000.67
 (2 rows)
+philip=# \q
 </code></pre>
+
+<p><em>Note&hellip; there is an error in this data - we will discuss it in class
+on Tuesday.</em></p>
 
 <p>Formatting:  the income number is formatted using a type
 cast of <code>::numeric(10,2)</code>.</p>
 
-<p>To do the query you will need a table that lists the per-county
-winners.</p>
+<p>To do the query you will need to join to the table that lists the per-county
+winners, election_2020.</p>
 
 <pre><code>  1: drop table if exists election_2020 ;
   2: create table election_2020 (
@@ -778,12 +805,21 @@ winners.</p>
 
 <p>Create and populate the table with using insert/update statements.</p>
 
+<p>===================================================================================
+Find the errors in the queries.   Not all of the counties are represented
+because the data is missing some stuff.  Not all states represent
+data as &ldquo;county&rdquo; data.  For example, find
+&ldquo;Albemarle + Charlottesville,&ldquo;74,603&rdquo;,&ldquo;75,885&rdquo;,&ldquo;77,606&rdquo;,7,1.7,2.3,104&rdquo;
+line 3004 in lapi1121.csv.  This is skiped in the load program.
+So the data for this combined county and city is not in the</p>
+
+<h1><code>bea_growth_data</code> table.</h1>
+
 <h2>Turn in</h2>
 
 <ol>
-<li>Your insert update/statements for <code>election_2020</code>.</li>
-<li>A select from <code>election_2020</code> that groups and counts the number of counties that each candidate won. (Hint: Biden won 293 counties)
-Turn in the output from this select statement.</li>
+<li>Your output from the 2 queries.</li>
+<li>A select from <code>election_2020</code> that groups and counts the number of counties that each candidate won. (Hint: Biden won 293 counties)</li>
 <li>Your select statement that shows the average per capita income by counties that a candidate won.
 The output from this select. (Hint: should match the example output above).</li>
 </ol>
