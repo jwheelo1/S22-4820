@@ -812,10 +812,29 @@ or <a href="https://www.tutorialspoint.com/postgresql/postgresql_using_joins.htm
 
 <h2>3 0011 and 6 0110 - Select from a single table.</h2>
 
-<p>This is the not-joined condition.</p>
+<p>This is the not-joined condition.  Also see below.</p>
 
 <pre><code>  1: select * from marketing_data;
   2: select * from do_not_call_list;
+
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>  name  | amount |   phone_no   
+--------+--------+--------------
+ philip |   5000 | 720-209-7888
+ bob    |  25000 | 505-444-1212
+ mark   |    200 | 307-338-1212
+ dave   |   -200 | 307-130-1212
+(4 rows)
+
+   phone_no   |     when_added      
+--------------+---------------------
+ 505-444-1212 | 2021-02-04 13:14:15
+ 505-222-1212 | 2020-01-03 13:14:15
+(2 rows)
 
 
 </code></pre>
@@ -848,6 +867,16 @@ or <a href="https://www.tutorialspoint.com/postgresql/postgresql_using_joins.htm
   2:     from marketing_data as t1, do_not_call_list as t2
   3:     where t1.phone_no = t2.phone_no
   4: ;
+
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code> name 
+------
+ bob
+(1 row)
 
 
 </code></pre>
@@ -899,6 +928,18 @@ one of the other join that we have already shown)</p>
 
 <p>This is really good for things like products that are out of stock!</p>
 
+<p>Output:</p>
+
+<pre><code>   phone_no   
+--------------
+ 307-130-1212
+ 720-209-7888
+ 307-338-1212
+(3 rows)
+
+
+</code></pre>
+
 <h2>1 0001</h2>
 
 <p>This gives us just the numbes in the do-not-call list that are not in the
@@ -909,6 +950,16 @@ set of marketing data.</p>
   3:         right join do_not_call_list as t2 on ( t1.phone_no = t2.phone_no)
   4:         where t1.phone_no is null 
   5: ;
+
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code> name |     when_added      
+------+---------------------
+      | 2020-01-03 13:14:15
+(1 row)
 
 
 </code></pre>
@@ -926,6 +977,18 @@ set of marketing data.</p>
 
 </code></pre>
 
+<p>Output:</p>
+
+<pre><code>  name  |   phone_no   | when_added 
+--------+--------------+------------
+ philip | 720-209-7888 | 
+ mark   | 307-338-1212 | 
+ dave   | 307-130-1212 | 
+(3 rows)
+
+
+</code></pre>
+
 <h2>5 0101</h2>
 
 <pre><code>  1: select name, when_added
@@ -934,6 +997,19 @@ set of marketing data.</p>
   4:         where t1.phone_no is null 
   5:             or t2.phone_no is null
   6: ;
+
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>  name  |     when_added      
+--------+---------------------
+ dave   | 
+ mark   | 
+        | 2020-01-03 13:14:15
+ philip | 
+(4 rows)
 
 
 </code></pre>
@@ -958,6 +1034,20 @@ set of marketing data.</p>
 
 </code></pre>
 
+<p>Output:</p>
+
+<pre><code>  name  |     when_added      
+--------+---------------------
+ dave   | 
+ mark   | 
+        | 2020-01-03 13:14:15
+ bob    | 2021-02-04 13:14:15
+ philip | 
+(5 rows)
+
+
+</code></pre>
+
 <h2>Cross Join</h2>
 
 <p>This is the one that is not in the VEN diagram - that is all of the left table with all of the right
@@ -973,12 +1063,29 @@ construct new data from it&rdquo; operation.</p>
 
 </code></pre>
 
-<p>or</p>
+<p>or (this is the way you would do this in Oracle, mySQL, MariaDB)</p>
 
 <pre><code>  1: select * 
   2:     from marketing_data as t1
   3:         , do_not_call_list as t2 
   4: ;
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>  name  | amount |   phone_no   |   phone_no   |     when_added      
+--------+--------+--------------+--------------+---------------------
+ philip |   5000 | 720-209-7888 | 505-444-1212 | 2021-02-04 13:14:15
+ bob    |  25000 | 505-444-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ mark   |    200 | 307-338-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ dave   |   -200 | 307-130-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ philip |   5000 | 720-209-7888 | 505-222-1212 | 2020-01-03 13:14:15
+ bob    |  25000 | 505-444-1212 | 505-222-1212 | 2020-01-03 13:14:15
+ mark   |    200 | 307-338-1212 | 505-222-1212 | 2020-01-03 13:14:15
+ dave   |   -200 | 307-130-1212 | 505-222-1212 | 2020-01-03 13:14:15
+(8 rows)
+
 
 </code></pre>
 

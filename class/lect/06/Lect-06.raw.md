@@ -77,7 +77,7 @@ Useful for checking if a program has a connection to the database.
 m4_comment([[[ =========================================================================================== ]]])
 ## 3 0011 and 6 0110 - Select from a single table. 
 
-This is the not-joined condition.
+This is the not-joined condition.  Also see below.
 
 ```
 m4_include(3.sql.nu)
@@ -89,6 +89,11 @@ select * from do_not_call_list;
 ]]])
 ```
 
+Output:
+
+```
+m4_include(3.out)
+```
 
 
 
@@ -133,7 +138,11 @@ select t1.name
 ]]])
 ```
 
+Output:
 
+```
+m4_include(2.out)
+```
 
 
 
@@ -198,6 +207,11 @@ m4_include(8-oracle.sql.nu)
 This is really good for things like products that are out of stock!
 
 
+Output:
+
+```
+m4_include(8.out)
+```
 
 
 
@@ -219,6 +233,11 @@ select name, when_added
 ]]])
 ```
 
+Output:
+
+```
+m4_include(1.out)
+```
 
 
 m4_comment([[[ =========================================================================================== ]]])
@@ -237,6 +256,11 @@ select name, t1.phone_no, when_added
 ]]])
 ```
 
+Output:
+
+```
+m4_include(4.out)
+```
 
 
 
@@ -258,6 +282,11 @@ select name
 ]]])
 ```
 
+Output:
+
+```
+m4_include(5.out)
+```
 
 
 
@@ -289,6 +318,13 @@ select name
 ]]])
 ```
 
+Output:
+
+```
+m4_include(7.out)
+```
+
+
 
 
 m4_comment([[[ =========================================================================================== ]]])
@@ -304,10 +340,17 @@ Given our little set of data this makes no sense.   Oh... Well...
 m4_include(cross-join.sql.nu)
 ```
 
-or
+or (this is the way you would do this in Oracle, mySQL, MariaDB)
 
 ```
 m4_include(cross-where.sql.nu)
 ```
+
+Output:
+
+```
+m4_include(cross-join.out)
+```
+
 
 

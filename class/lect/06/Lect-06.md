@@ -116,7 +116,7 @@ Useful for checking if a program has a connection to the database.
 
 ## 3 0011 and 6 0110 - Select from a single table. 
 
-This is the not-joined condition.
+This is the not-joined condition.  Also see below.
 
 ```
   1: select * from marketing_data;
@@ -125,6 +125,25 @@ This is the not-joined condition.
 
 ```
 
+Output:
+
+```
+  name  | amount |   phone_no   
+--------+--------+--------------
+ philip |   5000 | 720-209-7888
+ bob    |  25000 | 505-444-1212
+ mark   |    200 | 307-338-1212
+ dave   |   -200 | 307-130-1212
+(4 rows)
+
+   phone_no   |     when_added      
+--------------+---------------------
+ 505-444-1212 | 2021-02-04 13:14:15
+ 505-222-1212 | 2020-01-03 13:14:15
+(2 rows)
+
+
+```
 
 
 
@@ -166,7 +185,16 @@ or in the where clause
 
 ```
 
+Output:
 
+```
+ name 
+------
+ bob
+(1 row)
+
+
+```
 
 
 
@@ -234,6 +262,18 @@ In Oracle, DB2, MS-SQL-Server, MariaDB and mySQL:
 This is really good for things like products that are out of stock!
 
 
+Output:
+
+```
+   phone_no   
+--------------
+ 307-130-1212
+ 720-209-7888
+ 307-338-1212
+(3 rows)
+
+
+```
 
 
 
@@ -254,6 +294,16 @@ set of marketing data.
 
 ```
 
+Output:
+
+```
+ name |     when_added      
+------+---------------------
+      | 2020-01-03 13:14:15
+(1 row)
+
+
+```
 
 
 
@@ -271,6 +321,18 @@ This is like 1 or the "minus" above with the tables switched.
 
 ```
 
+Output:
+
+```
+  name  |   phone_no   | when_added 
+--------+--------------+------------
+ philip | 720-209-7888 | 
+ mark   | 307-338-1212 | 
+ dave   | 307-130-1212 | 
+(3 rows)
+
+
+```
 
 
 
@@ -291,6 +353,19 @@ This is like 1 or the "minus" above with the tables switched.
 
 ```
 
+Output:
+
+```
+  name  |     when_added      
+--------+---------------------
+ dave   | 
+ mark   | 
+        | 2020-01-03 13:14:15
+ philip | 
+(4 rows)
+
+
+```
 
 
 
@@ -320,6 +395,22 @@ FULL OUTER
 
 ```
 
+Output:
+
+```
+  name  |     when_added      
+--------+---------------------
+ dave   | 
+ mark   | 
+        | 2020-01-03 13:14:15
+ bob    | 2021-02-04 13:14:15
+ philip | 
+(5 rows)
+
+
+```
+
+
 
 
 
@@ -339,7 +430,7 @@ Given our little set of data this makes no sense.   Oh... Well...
 
 ```
 
-or
+or (this is the way you would do this in Oracle, mySQL, MariaDB)
 
 ```
   1: select * 
@@ -348,5 +439,24 @@ or
   4: ;
 
 ```
+
+Output:
+
+```
+  name  | amount |   phone_no   |   phone_no   |     when_added      
+--------+--------+--------------+--------------+---------------------
+ philip |   5000 | 720-209-7888 | 505-444-1212 | 2021-02-04 13:14:15
+ bob    |  25000 | 505-444-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ mark   |    200 | 307-338-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ dave   |   -200 | 307-130-1212 | 505-444-1212 | 2021-02-04 13:14:15
+ philip |   5000 | 720-209-7888 | 505-222-1212 | 2020-01-03 13:14:15
+ bob    |  25000 | 505-444-1212 | 505-222-1212 | 2020-01-03 13:14:15
+ mark   |    200 | 307-338-1212 | 505-222-1212 | 2020-01-03 13:14:15
+ dave   |   -200 | 307-130-1212 | 505-222-1212 | 2020-01-03 13:14:15
+(8 rows)
+
+
+```
+
 
 
