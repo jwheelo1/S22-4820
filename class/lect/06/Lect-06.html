@@ -726,14 +726,70 @@ table {
 }
 </style>
 
-<h1>Lecture 03 - Update</h1>
+<h1>Lecture 06 - Joins</h1>
 
-<h2>Feb 3</h2>
+<h2>Feb 1</h2>
 
-<pre><code>update table [ alis ]
-set
-	columns
-Where ...
+<p><img src="all-ven-diagrams.png" alt="all-ven-diagrams.png" /></p>
+
+<p>there are 16 of them.</p>
+
+<p>Let&rsquo;s work through all of them in PostgreSQL.</p>
+
+<h2>0 0000 - the set of NO data.</h2>
+
+<pre><code>select 'a' as &quot;x&quot;
+	where 1 = 2
+;
+</code></pre>
+
+<p>Useful for checking if a program has a connection to the database.</p>
+
+<h2>2 0010 - Intersection of 2 sets</h2>
+
+<p>This is the <code>inner</code> join between 2 sets of data.</p>
+
+<p>xyzzy</p>
+
+<h2>3 0011 and 6 0110 - Select from a single table.</h2>
+
+<p>This is the not-joined condition.</p>
+
+<pre><code>select * from a;
+
+select * from b;
+</code></pre>
+
+<h2>15 - 1111 - Select with no conditions.</h2>
+
+<p>This is useful for doing calculations in PostgreSQL.</p>
+
+<pre><code>select 12 * 33;
+</code></pre>
+
+<p>(In Oracle&hellip;.)</p>
+
+<pre><code>select 12 * 33 from dual;
+</code></pre>
+
+<p>Or generate a series:</p>
+
+<pre><code>SELECT generate_series(3, 100) / 3;
+</code></pre>
+
+<h2>8 1000 - Minus Operations.</h2>
+
+<p>(this also coves 9, 10, 11, 12, 13, 14 when the 2nd select (after the minus) is
+one of the other join that we have already shown)</p>
+
+<p>Remove from a fixed list a set of things</p>
+
+<pre><code>select phone_no
+	from marketing_data
+minus
+	select phone_no
+	from do_not_call_list
+;
 </code></pre>
 
 </div>
