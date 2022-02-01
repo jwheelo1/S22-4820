@@ -260,6 +260,9 @@ select name
 
 
 
+
+
+
 m4_comment([[[ =========================================================================================== ]]])
 ## 7 0111 - full outer join
 
@@ -286,5 +289,25 @@ select name
 ]]])
 ```
 
+
+
+m4_comment([[[ =========================================================================================== ]]])
+## Cross Join
+
+This is the one that is not in the VEN diagram - that is all of the left table with all of the right
+table.   This is more of a "join-all-together so I can post filer" or "join-all-together so I can
+construct new data from it" operation.
+
+Given our little set of data this makes no sense.   Oh... Well...
+
+```
+m4_include(cross-join.sql.nu)
+```
+
+or
+
+```
+m4_include(cross-where.sql.nu)
+```
 
 

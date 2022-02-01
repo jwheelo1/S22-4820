@@ -294,6 +294,9 @@ This is like 1 or the "minus" above with the tables switched.
 
 
 
+
+
+
 ## 7 0111 - full outer join
 
 
@@ -317,5 +320,33 @@ FULL OUTER
 
 ```
 
+
+
+
+## Cross Join
+
+This is the one that is not in the VEN diagram - that is all of the left table with all of the right
+table.   This is more of a "join-all-together so I can post filer" or "join-all-together so I can
+construct new data from it" operation.
+
+Given our little set of data this makes no sense.   Oh... Well...
+
+```
+  1: select * 
+  2:     from marketing_data as t1
+  3:         cross join do_not_call_list as t2 
+  4: ;
+
+```
+
+or
+
+```
+  1: select * 
+  2:     from marketing_data as t1
+  3:         , do_not_call_list as t2 
+  4: ;
+
+```
 
 

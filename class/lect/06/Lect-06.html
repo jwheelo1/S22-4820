@@ -958,5 +958,29 @@ set of marketing data.</p>
 
 </code></pre>
 
+<h2>Cross Join</h2>
+
+<p>This is the one that is not in the VEN diagram - that is all of the left table with all of the right
+table.   This is more of a &ldquo;join-all-together so I can post filer&rdquo; or &ldquo;join-all-together so I can
+construct new data from it&rdquo; operation.</p>
+
+<p>Given our little set of data this makes no sense.   Oh&hellip; Well&hellip;</p>
+
+<pre><code>  1: select * 
+  2:     from marketing_data as t1
+  3:         cross join do_not_call_list as t2 
+  4: ;
+
+</code></pre>
+
+<p>or</p>
+
+<pre><code>  1: select * 
+  2:     from marketing_data as t1
+  3:         , do_not_call_list as t2 
+  4: ;
+
+</code></pre>
+
 </div>
 
